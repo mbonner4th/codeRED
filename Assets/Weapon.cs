@@ -16,26 +16,33 @@ public class Weapon : MonoBehaviour {
 
 	private float timeToFire = 0;
 	private Transform firePoint;
-
-	// Use this for initialization
-	void Awake () {
+    private Transform endPoint;
+    // Use this for initialization
+    void Awake () {
 		firePoint = transform.FindChild ("FirePoint");
-		if (firePoint == null) {
+        endPoint = transform.FindChild("EndPoint");
+        if (firePoint == null) {
 		
 			Debug.LogError("No Firepoint");
 		}
-	}
+        if (endPoint == null)
+        {
+
+            Debug.LogError("No Endpoint");
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
 
 		if (fireRate == 0) {
-			if (Input.GetButtonDown ("Fire1")) {
+			if (Input.GetButtonDown ("Fire1")&&this.transform.parent!=null) {//only shoot if the weapon has an owner
 				Shoot ();
 			}
 		}
 		else {
-			if (Input.GetButton("Fire1") && Time.time > timeToFire){
+			if (Input.GetButton("Fire1") && Time.time > timeToFire && this.transform.parent != null)
+            {
 				timeToFire = Time.time +1/fireRate;
 
 				Shoot();
@@ -45,10 +52,12 @@ public class Weapon : MonoBehaviour {
 
 	void Shoot(){
 
-		Vector2 mousePosition = new Vector2 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x,
-		                                     Camera.main.ScreenToWorldPoint (Input.mousePosition).y);
+		//Vector2 mousePosition = new Vector2 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x,
+		//                                     Camera.main.ScreenToWorldPoint (Input.mousePosition).y);
 		Vector2 firePointPosition = new Vector2 (firePoint.position.x, firePoint.position.y);
-		RaycastHit2D hit = Physics2D.Raycast (firePointPosition, mousePosition - firePointPosition, 100, whatToHit);         
+        Vector2 endPointPosition = new Vector2(endPoint.position.x, endPoint.position.y);
+
+        RaycastHit2D hit = Physics2D.Raycast (firePointPosition, endPointPosition - firePointPosition, 100, whatToHit);         
 
 		if (Time.time >= timeToSpawnEffect) {
 			Effect ();

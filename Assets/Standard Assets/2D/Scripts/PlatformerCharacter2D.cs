@@ -22,7 +22,7 @@ namespace UnityStandardAssets._2D
 
 
 		Transform playerGraphics;			//reference to graphics so wecan change direction
-
+        Transform arm; //reference to arms so we can change arm direction
         private void Awake()
         {
             // Setting up references.
@@ -35,6 +35,12 @@ namespace UnityStandardAssets._2D
 			if (playerGraphics == null) {
 				Debug.LogError("No graphics object found in child");
 			}
+            arm = transform.FindChild("arm");
+            if (arm == null)
+            {
+                Debug.LogError("No arm object found in child");
+            }
+
         }
 
 
@@ -117,6 +123,14 @@ namespace UnityStandardAssets._2D
 			Vector3 theScale = playerGraphics.localScale;
             theScale.x *= -1;
 			playerGraphics.localScale = theScale;
+            if (m_FacingRight)  //if character is facing right, rotate the arm to the right otherwise left
+            {
+                arm.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            else
+            {
+                arm.rotation = Quaternion.Euler(0, 180, 0);
+            }
         }
     }
 }
