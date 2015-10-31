@@ -10,12 +10,16 @@ public class Player : MonoBehaviour {
 
 	public PlayerStats playerStats = new PlayerStats();
 	public int fallBoundary = -20;
+    private Weapon myWeapon = null;
     private Transform arm;
 	void Update(){
 		if (transform.position.y <= fallBoundary)
 			damagePlayer (1000);
-        if (Input.GetButtonDown("Fire2")) {//currently using the default fire 2 button, can change to some keys later
-            pickUp();
+        if (Input.GetButtonDown("Grab1")) {//currently using the default fire 2 button, can change to some keys later
+            pickUp(); 
+        }
+        if (Input.GetButtonDown("Fire1")) {
+            shoot();
         }
 	}
 
@@ -26,7 +30,12 @@ public class Player : MonoBehaviour {
 			GameMaster.killPlayer(this);
 		}
 	}
-    
+
+    public void shoot() {
+        if (myWeapon != null) {
+            myWeapon.Shoot();
+        }
+    }
 
     public void pickUp() {
         arm = transform.FindChild("arm");
@@ -35,9 +44,11 @@ public class Player : MonoBehaviour {
             if (Physics2D.IsTouching(this.GetComponent<Collider2D>(), 
                         ((Weapon)n).GetComponent<Collider2D>())) { //check is the player touching any weapon
                 if (arm.childCount>0) {// Destroy the old weapon in arm
+                    myWeapon = null;
                     Destroy(arm.GetChild(0).gameObject);
                 }
                 n.transform.parent = transform.FindChild("arm");  // attach new weapon to arm
+                myWeapon = (Weapon)n;
                 break;
             }
         }

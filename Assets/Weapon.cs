@@ -11,7 +11,8 @@ public class Weapon : MonoBehaviour {
 	public Transform BulletTrailPrefab;
 	private float timeToSpawnEffect = 0;
 	public float effectSpawnRate = 10;
-
+    public int charges;
+    private int uses = 0;
 	public Transform muzzleFlashPrefab;
 
 	private float timeToFire = 0;
@@ -37,7 +38,7 @@ public class Weapon : MonoBehaviour {
 
 		if (fireRate == 0) {
 			if (Input.GetButtonDown ("Fire1")&&this.transform.parent!=null) {//only shoot if the weapon has an owner
-				Shoot ();
+				//Shoot ();
 			}
 		}
 		else {
@@ -45,12 +46,16 @@ public class Weapon : MonoBehaviour {
             {
 				timeToFire = Time.time +1/fireRate;
 
-				Shoot();
+				//Shoot();
 			}
 		}
 	}
 
-	void Shoot(){
+	public void Shoot(){
+        if (uses == charges) {
+            return;
+        }
+        uses++;
 
 		//Vector2 mousePosition = new Vector2 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x,
 		//                                     Camera.main.ScreenToWorldPoint (Input.mousePosition).y);
