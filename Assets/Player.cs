@@ -10,8 +10,9 @@ public class Player : MonoBehaviour {
 
 	public PlayerStats playerStats = new PlayerStats();
 	public int fallBoundary = -20;
+    private Transform arm; //players'arm
     private Weapon myWeapon = null;
-    private Transform arm;
+    private Transform weaponPoint; //where to put the weapon
 	void Update(){
 		if (transform.position.y <= fallBoundary)
 			damagePlayer (1000);
@@ -39,15 +40,21 @@ public class Player : MonoBehaviour {
 
     public void pickUp() {
         arm = transform.FindChild("arm");
+        weaponPoint = arm.FindChild("weaponPoint");
         Object[] o = FindObjectsOfType(typeof(Weapon));//look for all weapons on the map
         foreach (Weapon n in o) {
             if (Physics2D.IsTouching(this.GetComponent<Collider2D>(), 
                         ((Weapon)n).GetComponent<Collider2D>())) { //check is the player touching any weapon
-                if (arm.childCount>0) {// Destroy the old weapon in arm
+                if (arm.childCount>1) {// Destroy the old weapon in arm
+                    Destroy(arm.GetChild(1).gameObject);
+
                     myWeapon = null;
-                    Destroy(arm.GetChild(0).gameObject);
+
                 }
-                n.transform.parent = transform.FindChild("arm");  // attach new weapon to arm
+                n.transform.parent = arm;  // attach new weapon to arm
+                Vector2 weaponPoistion = new Vector2(weaponPoint.position.x, weaponPoint.position.y);
+                n.transform.position = weaponPoistion;
+                n.transform.rotation = arm.rotation;
                 myWeapon = (Weapon)n;
                 break;
             }

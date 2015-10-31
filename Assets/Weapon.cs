@@ -11,7 +11,7 @@ public class Weapon : MonoBehaviour {
 	public Transform BulletTrailPrefab;
 	private float timeToSpawnEffect = 0;
 	public float effectSpawnRate = 10;
-    public int charges;
+    public int charges = 5;
     private int uses = 0;
 	public Transform muzzleFlashPrefab;
 
@@ -79,11 +79,14 @@ public class Weapon : MonoBehaviour {
 
 	void Effect(){
 		Instantiate (BulletTrailPrefab, firePoint.position, firePoint.rotation);
-		Transform clone = (Transform)Instantiate (muzzleFlashPrefab, firePoint.position, firePoint.rotation);
-		clone.parent = firePoint;
-		float size = Random.Range (0.6f, 0.9f);
-		clone.localScale = new Vector3 (size, size, size);
-		Destroy (clone.gameObject, 0.02f);
+        if (muzzleFlashPrefab!=null) {
+            Transform clone = (Transform)Instantiate(muzzleFlashPrefab, firePoint.position, firePoint.rotation);
+            clone.parent = firePoint;
+            float size = Random.Range(0.6f, 0.9f);
+            clone.localScale = new Vector3(size, size, size);
+            Destroy(clone.gameObject, 0.02f);
+        }
+
 
 	}
 }
