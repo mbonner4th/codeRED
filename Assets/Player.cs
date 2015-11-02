@@ -51,11 +51,10 @@ public class Player : MonoBehaviour {
                         ((Weapon)n).GetComponent<Collider2D>())) { //check is the player touching any weapon
                 if (arm.childCount>1) {// Destroy the old weapon in arm
                     Destroy(arm.GetChild(1).gameObject);
-
                     myWeapon = null;
 
                 }
-                n.transform.parent = arm;  // attach new weapon to arm
+                n.transform.SetParent(arm);  // attach new weapon to arm
                 Vector2 weaponPoistion = new Vector2(weaponPoint.position.x, weaponPoint.position.y);
                 n.transform.position = weaponPoistion;
                 n.transform.rotation = arm.rotation;
