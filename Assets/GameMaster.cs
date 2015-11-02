@@ -2,6 +2,13 @@
 using System.Collections;
 
 public class GameMaster : MonoBehaviour {
+    private bool paused;
+
+    public bool Paused {
+        get {
+            return paused;
+        }
+    }
 
 	public static GameMaster gm;
 
@@ -27,4 +34,19 @@ public class GameMaster : MonoBehaviour {
 		Destroy (player.gameObject);
 		gm.StartCoroutine(gm.respawnPlayer ());
 	}
+
+    void Update() {
+        if (Input.GetButtonDown("Pause")) {
+            Pause();
+            if (paused) {
+                Time.timeScale = 0;
+            } else {
+                Time.timeScale = 1;
+            }
+        }
+    }
+
+    public void Pause() {
+        paused = !paused;
+    }
 }
