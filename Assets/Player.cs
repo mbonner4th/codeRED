@@ -13,6 +13,7 @@ public class Player : MonoBehaviour {
     private Transform arm; //players'arm
     private Weapon myWeapon = null;
     private Transform weaponPoint; //where to put the weapon
+    public int playerNum;
 	void Update(){
 		if (transform.position.y <= fallBoundary)
 			damagePlayer (1000);

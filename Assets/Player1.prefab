@@ -32,7 +32,7 @@ GameObject:
   - 212: {fileID: 21249936}
   - 114: {fileID: 11477246}
   m_Layer: 8
-  m_Name: CharacterRobotBoy
+  m_Name: Player1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -279,6 +279,7 @@ MonoBehaviour:
   playerStats:
     Health: 100
   fallBoundary: -20
+  playerNum: 1
 --- !u!212 &21248912
 SpriteRenderer:
   m_ObjectHideFlags: 1
