@@ -5,7 +5,7 @@ public class Player : MonoBehaviour {
 
 	[System.Serializable]
 	public class PlayerStats{
-		public int Health = 100;
+		public int Health = 1;
 	}
 
 	public PlayerStats playerStats = new PlayerStats();
@@ -16,7 +16,7 @@ public class Player : MonoBehaviour {
     public int playerNum;
 	void Update(){
 		if (transform.position.y <= fallBoundary)
-			damagePlayer (1000);
+			damagePlayer (1);
         if (!GameMaster.gm.Paused) {
             if (playerNum == 1)
             {
@@ -42,6 +42,16 @@ public class Player : MonoBehaviour {
             }
         }
 	}
+
+   void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("#triggered");
+        if(other.gameObject.tag == "Spikes")
+        {
+            Debug.Log("Spiked");
+            damagePlayer(1000);
+        }
+    }
 
 	public void damagePlayer(int damage){
 		playerStats.Health -= damage;
