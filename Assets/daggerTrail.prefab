@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 425830}
   - 114: {fileID: 11490420}
   - 212: {fileID: 21292146}
+  - 61: {fileID: 6167714}
   m_Layer: 0
   m_Name: daggerTrail
   m_TagString: Untagged
@@ -29,6 +30,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!61 &6167714
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 166114}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1.89999998, y: .75999999}
 --- !u!114 &11490420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -40,7 +54,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf59f53695eb42648adce0595f6227aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 20
 --- !u!212 &21292146
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -76,11 +90,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: moveSpeed
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
