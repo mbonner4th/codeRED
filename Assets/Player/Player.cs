@@ -18,13 +18,27 @@ public class Player : MonoBehaviour {
 		if (transform.position.y <= fallBoundary)
 			damagePlayer (1000);
         if (!GameMaster.gm.Paused) {
-            if (Input.GetButtonDown("Grab1"))
-            {//currently using the default fire 2 button, can change to some keys later
-                pickUp();
-            }
-            if (Input.GetButtonDown("Fire1"))
+            if (playerNum == 1)
             {
-                shoot();
+                if (Input.GetButtonDown("Grab1"))
+                {//currently using the default fire 2 button, can change to some keys later
+                    pickUp();
+                }
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    shoot();
+                }
+            }
+            else if(playerNum == 2)
+            {
+                if (Input.GetButtonDown("Grab2"))
+                {//currently using the default fire 2 button, can change to some keys later
+                    pickUp();
+                }
+                if (Input.GetButtonDown("Fire2"))
+                {
+                    shoot();
+                }
             }
         }
 	}

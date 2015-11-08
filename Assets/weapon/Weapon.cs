@@ -38,12 +38,15 @@ public class Weapon : MonoBehaviour {
 	void Update () {
 		if(trail.Count>0){
 			Object[] o = FindObjectsOfType(typeof(Player));
+			
 			for(int i = 0; i<trail.Count;i++){
 				Transform t = (Transform)trail[i];
 				if(t!=null){
 					foreach (Player p in o) {
+						
 						if(Physics2D.IsTouching(((Transform)t).GetComponent<Collider2D>(),
 								((Player)p).GetComponent<Collider2D>())){
+								Debug.Log(p);
 							((Player)p).GetComponent<Player>().damagePlayer((int)damage);
 							Destroy(((Transform)t).gameObject);
 						}
