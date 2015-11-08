@@ -111,10 +111,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 0
-  damage: 10
+  damage: 100
   whatToHit:
     serializedVersion: 2
-    m_Bits: 4294967035
+    m_Bits: 4294966728
   BulletTrailPrefab: {fileID: 425830, guid: 0cf248625574eab4fbb521e25b08cd42, type: 2}
   effectSpawnRate: 10
   charges: 5
@@ -151,7 +151,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 102990}

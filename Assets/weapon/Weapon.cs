@@ -7,7 +7,7 @@ public class Weapon : MonoBehaviour {
 	public float fireRate = 0;
 	public float damage = 10;
 	public LayerMask whatToHit;
-
+	
 	public Transform BulletTrailPrefab;
 	private float timeToSpawnEffect = 0;
 	public float effectSpawnRate = 10;
@@ -18,6 +18,7 @@ public class Weapon : MonoBehaviour {
 	private float timeToFire = 0;
 	private Transform firePoint;
     private Transform endPoint;
+	private ArrayList trail = new ArrayList();
     // Use this for initialization
     void Awake () {
 		firePoint = transform.FindChild ("FirePoint");
@@ -35,20 +36,28 @@ public class Weapon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		if (fireRate == 0) {
-			if (Input.GetButtonDown ("Fire1")&&this.transform.parent!=null) {//only shoot if the weapon has an owner
-				//Shoot ();
+		if(trail.Count>0){
+			Object[] o = FindObjectsOfType(typeof(Player));
+			
+			for(int i = 0; i<trail.Count;i++){
+				Transform t = (Transform)trail[i];
+				if(t!=null){
+					foreach (Player p in o) {
+						
+						if(Physics2D.IsTouching(((Transform)t).GetComponent<Collider2D>(),
+								((Player)p).GetComponent<Collider2D>())){
+								Debug.Log(p);
+							((Player)p).GetComponent<Player>().damagePlayer((int)damage);
+							Destroy(((Transform)t).gameObject);
+						}
+					}
+				}
+				
 			}
+			
 		}
-		else {
-			if (Input.GetButton("Fire1") && Time.time > timeToFire && this.transform.parent != null)
-            {
-				timeToFire = Time.time +1/fireRate;
 
-				//Shoot();
-			}
-		}
+		
 	}
 
 	public void Shoot(){
@@ -56,13 +65,9 @@ public class Weapon : MonoBehaviour {
             return;
         }
         uses++;
-
-		//Vector2 mousePosition = new Vector2 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x,
-		//                                     Camera.main.ScreenToWorldPoint (Input.mousePosition).y);
-		Vector2 firePointPosition = new Vector2 (firePoint.position.x, firePoint.position.y);
-        Vector2 endPointPosition = new Vector2(endPoint.position.x, endPoint.position.y);
-
-        RaycastHit2D hit = Physics2D.Raycast (firePointPosition, endPointPosition - firePointPosition, 100, whatToHit);         
+		//Vector2 firePointPosition = new Vector2 (firePoint.position.x, firePoint.position.y);
+        //Vector2 endPointPosition = new Vector2(endPoint.position.x, endPoint.position.y);
+        //RaycastHit2D hit = Physics2D.Raycast (firePointPosition, endPointPosition - firePointPosition, 100, whatToHit);         
 
 		if (Time.time >= timeToSpawnEffect) {
 			Effect ();
@@ -70,15 +75,16 @@ public class Weapon : MonoBehaviour {
 		}
 	//	Debug.DrawLine (firePointPosition, (mousePosition - firePointPosition));
 
-		if (hit.collider != null) {
-		//	Debug.DrawLine(firePointPosition, hit.point, Color.red);
-		//	Debug.Log("We Hit " + hit.collider.name +" and did " + damage + " Damage");
-		}
+		//if (hit.collider != null) {
+			//Debug.DrawLine(firePointPosition, hit.point, Color.red);
+			//Debug.Log("We Hit " + hit.collider.name +" and did " + damage + " Damage");
+			//hit.collider.gameObject.GetComponent<Player>().damagePlayer((int)damage);
+		//}
 
 	}
 
 	void Effect(){
-		Instantiate (BulletTrailPrefab, firePoint.position, firePoint.rotation);
+		trail.Add((Transform)Instantiate (BulletTrailPrefab, firePoint.position, firePoint.rotation));
         if (muzzleFlashPrefab!=null) {
             Transform clone = (Transform)Instantiate(muzzleFlashPrefab, firePoint.position, firePoint.rotation);
             clone.parent = firePoint;
