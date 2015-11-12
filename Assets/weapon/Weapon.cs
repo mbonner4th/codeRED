@@ -9,16 +9,16 @@ public class Weapon : MonoBehaviour {
 	public LayerMask whatToHit;
 	
 	public Transform BulletTrailPrefab;
-	private float timeToSpawnEffect = 0;
+	protected float timeToSpawnEffect = 0;
 	public float effectSpawnRate = 10;
     public int charges = 5;
-    private int uses = 0;
+    protected int uses = 0;
 	public Transform muzzleFlashPrefab;
 
-	private float timeToFire = 0;
-	private Transform firePoint;
-    private Transform endPoint;
-	private ArrayList trail = new ArrayList();
+	protected float timeToFire = 0;
+	protected Transform firePoint;
+    protected Transform endPoint;
+	protected ArrayList trail = new ArrayList();
     // Use this for initialization
     void Awake () {
 		firePoint = transform.FindChild ("FirePoint");
@@ -60,7 +60,12 @@ public class Weapon : MonoBehaviour {
 		
 	}
 
-	public void Shoot(){
+    public virtual void Release()
+    {
+
+    }
+
+	public virtual void Shoot(){
         if (uses == charges) {
             return;
         }
@@ -83,8 +88,8 @@ public class Weapon : MonoBehaviour {
 
 	}
 
-	void Effect(){
-		trail.Add((Transform)Instantiate (BulletTrailPrefab, firePoint.position, firePoint.rotation));
+	public virtual void Effect(){
+        trail.Add((Transform)Instantiate (BulletTrailPrefab, firePoint.position, firePoint.rotation));
         if (muzzleFlashPrefab!=null) {
             Transform clone = (Transform)Instantiate(muzzleFlashPrefab, firePoint.position, firePoint.rotation);
             clone.parent = firePoint;

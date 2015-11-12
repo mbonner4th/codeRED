@@ -39,8 +39,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2721b2c185b43c4d844d18f1d0f7e29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pistol: {fileID: 466348, guid: b7ca400510fa3d74d956a343c9410a85, type: 2}
   dagger: {fileID: 487412, guid: 311487f8daf6de54286861077c3ba5ea, type: 2}
+  grenade: {fileID: 438932, guid: 93ec36464cc542e48a2a2c9698f0172e, type: 2}
   spawnCooldown: 3
 --- !u!1001 &100100000
 Prefab:
@@ -48,7 +48,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: grenade
+      value: 
+      objectReference: {fileID: 438932, guid: 93ec36464cc542e48a2a2c9698f0172e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 178312}

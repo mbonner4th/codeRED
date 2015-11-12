@@ -3,6 +3,7 @@ using System.Collections;
 
 public class weaponSpawn : MonoBehaviour {
     public Transform dagger;
+    public Transform grenade;
     public int spawnCooldown = 3;
 
     private ArrayList commonWeapon = new ArrayList(); //common weapons
@@ -15,6 +16,7 @@ public class weaponSpawn : MonoBehaviour {
     void Awake () {
 
         commonWeapon.Add(dagger);//adding weapon prefabs to the list
+        commonWeapon.Add(grenade);
         int s = Random.Range(0, commonWeapon.Count);
         myWeapon = (Transform)Instantiate ((Transform)commonWeapon[s],transform.position, transform.rotation); // creating first weapon
         timeSinceLastSpawn = Time.time;

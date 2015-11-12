@@ -27,6 +27,9 @@ public class Player : MonoBehaviour {
                 if (Input.GetButtonDown("Fire1"))
                 {
                     shoot();
+                } else if (Input.GetButtonUp("Fire1"))
+                {
+                    release();
                 }
             }
             else if(playerNum == 2)
@@ -38,6 +41,9 @@ public class Player : MonoBehaviour {
                 if (Input.GetButtonDown("Fire2"))
                 {
                     shoot();
+                } else if (Input.GetButtonUp("Fire2"))
+                {
+                    release();
                 }
             }
         }
@@ -60,6 +66,12 @@ public class Player : MonoBehaviour {
 			GameMaster.killPlayer(this);
 		}
 	}
+
+    public void release() {
+        if (myWeapon != null) {
+            myWeapon.Release();
+        }
+    }
 
     public void shoot() {
         if (myWeapon != null) {
