@@ -14,36 +14,49 @@ public class Player : MonoBehaviour {
     private Weapon myWeapon = null;
     private Transform weaponPoint; //where to put the weapon
     public int playerNum;
+    private Animator m_Anim;            // Reference to the player's animator component.
+
+    private void Awake(){
+        m_Anim = GetComponent<Animator>();
+        m_Anim.SetBool("isKill", false);
+    }
+
 	void Update(){
 		if (transform.position.y <= fallBoundary)
 			damagePlayer (1);
-        if (!GameMaster.gm.Paused) {
-            if (playerNum == 1)
+        if (GameMaster.gm)
+        {
+            if (!GameMaster.gm.Paused)
             {
-                if (Input.GetButtonDown("Grab1"))
-                {//currently using the default fire 2 button, can change to some keys later
-                    pickUp();
+                if (playerNum == 1)
+                {
+                    if (Input.GetButtonDown("Grab1"))
+                    {//currently using the default fire 2 button, can change to some keys later
+                        pickUp();
+                    }
+                    if (Input.GetButtonDown("Fire1"))
+                    {
+                        shoot();
+                    }
+                    else if (Input.GetButtonUp("Fire1"))
+                    {
+                        release();
+                    }
                 }
-                if (Input.GetButtonDown("Fire1"))
+                else if (playerNum == 2)
                 {
-                    shoot();
-                } else if (Input.GetButtonUp("Fire1"))
-                {
-                    release();
-                }
-            }
-            else if(playerNum == 2)
-            {
-                if (Input.GetButtonDown("Grab2"))
-                {//currently using the default fire 2 button, can change to some keys later
-                    pickUp();
-                }
-                if (Input.GetButtonDown("Fire2"))
-                {
-                    shoot();
-                } else if (Input.GetButtonUp("Fire2"))
-                {
-                    release();
+                    if (Input.GetButtonDown("Grab2"))
+                    {//currently using the default fire 2 button, can change to some keys later
+                        pickUp();
+                    }
+                    if (Input.GetButtonDown("Fire2"))
+                    {
+                        shoot();
+                    }
+                    else if (Input.GetButtonUp("Fire2"))
+                    {
+                        release();
+                    }
                 }
             }
         }
@@ -63,6 +76,7 @@ public class Player : MonoBehaviour {
 		playerStats.Health -= damage;
 		if (playerStats.Health <= 0) {
 			Debug.Log("Player Is Kill");
+            m_Anim.SetBool("isKill", true);
 			GameMaster.killPlayer(this);
 		}
 	}
