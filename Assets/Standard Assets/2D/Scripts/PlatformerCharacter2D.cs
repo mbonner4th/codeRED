@@ -25,6 +25,7 @@ namespace UnityStandardAssets._2D
         Transform arm; //reference to arms so we can change arm direction
         private void Awake()
         {
+            Debug.Log("AWAKE IS CALLED");
             // Setting up references.
             m_GroundCheck = transform.Find("GroundCheck");
             m_CeilingCheck = transform.Find("CeilingCheck");
@@ -46,7 +47,7 @@ namespace UnityStandardAssets._2D
 
         private void FixedUpdate()
         {
-            m_Grounded = false;
+            m_Grounded = true;
 
             // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
             // This can be done using layers instead but Sample Assets will not overwrite your project settings.
@@ -54,18 +55,25 @@ namespace UnityStandardAssets._2D
             for (int i = 0; i < colliders.Length; i++)
             {
                 if (colliders[i].gameObject != gameObject)
+                {
+                    Debug.Log("grounded");
                     m_Grounded = true;
+                }
+
             }
-            m_Anim.SetBool("Ground", m_Grounded);
+            //m_Anim.SetBool("Ground", m_Grounded);
 
             // Set the vertical animation
-            m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.y);
+            //Debug.Log(m_Rigidbody2D.velocity.x);
+            //m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.x);
         }
 
 
         public void Move(float move, bool crouch, bool jump)
         {
+            Debug.Log("move is called");
             // If crouching, check to see if the character can stand up
+            /*
             if (!crouch && m_Anim.GetBool("Crouch"))
             {
                 // If the character has a ceiling preventing them from standing up, keep them crouching
@@ -74,13 +82,12 @@ namespace UnityStandardAssets._2D
                     crouch = true;
                 }
             }
+            */
 
             // Set whether or not the character is crouching in the animator
-            m_Anim.SetBool("Crouch", crouch);
+            //m_Anim.SetBool("Crouch", crouch);
 
             //only control the player if grounded or airControl is turned on
-            if (m_Grounded || m_AirControl)
-            {
                 // Reduce the speed if crouching by the crouchSpeed multiplier
                 move = (crouch ? move*m_CrouchSpeed : move);
 
@@ -102,13 +109,13 @@ namespace UnityStandardAssets._2D
                     // ... flip the player.
                     Flip();
                 }
-            }
+      
             // If the player should jump...
-            if (m_Grounded && jump && m_Anim.GetBool("Ground"))
+            if (m_Grounded && jump)
             {
+                Debug.Log("jump");
                 // Add a vertical force to the player.
                 m_Grounded = false;
-                m_Anim.SetBool("Ground", false);
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
             }
         }
@@ -116,6 +123,7 @@ namespace UnityStandardAssets._2D
 
         private void Flip()
         {
+            //Debug.Log("flip called");
             // Switch the way the player is labelled as facing.
             m_FacingRight = !m_FacingRight;
 
