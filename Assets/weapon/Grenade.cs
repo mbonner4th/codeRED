@@ -13,7 +13,8 @@ public class Grenade : Weapon {
         if (startTimer)
         {
             if (Time.time - throwTime > explodeTime) {
-
+                startTimer = false;
+                Effect();
             }
         }
 
