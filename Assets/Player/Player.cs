@@ -10,20 +10,29 @@ public class Player : MonoBehaviour {
 
 	public PlayerStats playerStats = new PlayerStats();
 	public int fallBoundary = -20;
+    public int playerNum;
+    public int lives;
+    public int invinicbleDuration = 2;
+
+    private float invincibleTime;
+    private bool invincible = false;
     private Transform arm; //players'arm
     private Weapon myWeapon = null;
     private Transform weaponPoint; //where to put the weapon
-    public int playerNum;
     private Animator m_Anim;            // Reference to the player's animator component.
 
     private void Awake(){
         m_Anim = GetComponent<Animator>();
         m_Anim.SetBool("isKill", false);
+        turnInvincible(2);
     }
 
 	void Update(){
-		if (transform.position.y <= fallBoundary)
-			damagePlayer (1);
+        if (invincible && (Time.time-invinicbleDuration >invincibleTime)) {
+            invincible = false;
+        }
+        if (transform.position.y <= fallBoundary)
+            GameMaster.killPlayer(this);
         if (GameMaster.gm)
         {
             if (!GameMaster.gm.Paused)
@@ -73,12 +82,15 @@ public class Player : MonoBehaviour {
     }
 
 	public void damagePlayer(int damage){
-		playerStats.Health -= damage;
-		if (playerStats.Health <= 0) {
-			Debug.Log("Player Is Kill");
-            m_Anim.SetBool("isKill", true);
-			GameMaster.killPlayer(this);
-		}
+        if (!invincible) {
+            playerStats.Health -= damage;
+            if (playerStats.Health <= 0)
+            {
+                Debug.Log("Player Is Kill");
+                m_Anim.SetBool("isKill", true);
+                GameMaster.killPlayer(this);
+            }
+        }
 	}
 
     public void release() {
@@ -93,6 +105,11 @@ public class Player : MonoBehaviour {
         }
     }
 
+    public void turnInvincible(int duration) {
+        invincible = true;
+        invinicbleDuration = duration;
+        invincibleTime = Time.time;
+    }
     public void pickUp() {
         arm = transform.FindChild("arm");
         weaponPoint = arm.FindChild("weaponPoint");
