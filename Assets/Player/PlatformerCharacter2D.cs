@@ -132,5 +132,14 @@ namespace UnityStandardAssets._2D
                 arm.rotation = Quaternion.Euler(0, 180, 0);
             }
         }
+
+        public void multiplySpeed(float newSpeedFactor)
+        {
+            m_MaxSpeed *= newSpeedFactor;
+        }
+        public void multiplyJump(float newJumpFactor)
+        {
+            m_JumpForce *= newJumpFactor;
+        }
     }
 }
