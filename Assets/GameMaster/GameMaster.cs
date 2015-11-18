@@ -25,20 +25,30 @@ public class GameMaster : MonoBehaviour {
 	public int spawnDelay = 2;
     public int numPlayers = 2;
 
-	public IEnumerator respawnPlayer(int num_Player){
+	public IEnumerator respawnPlayer(int num_Player,int lives){
 
 		yield return new WaitForSeconds (spawnDelay);
 
-		if(num_Player == 1)
-            Instantiate (playerPrefab, spawnPoint.position, spawnPoint.rotation);
-        else if(num_Player == 2)
-            Instantiate(player2Prefab, spawnPoint2.position, spawnPoint2.rotation);
+        if (num_Player == 1)
+        {
+            Transform p = (Transform)Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
+            p.GetComponent<Player>().lives = lives - 1;
+        }
+
+        else if (num_Player == 2) {
+            Transform p = (Transform)Instantiate(player2Prefab, spawnPoint2.position, spawnPoint2.rotation);
+            p.GetComponent<Player>().lives = lives - 1;
+        }
+            
 
     }
 
 	public static void killPlayer(Player player){
 		Destroy (player.gameObject);
-		gm.StartCoroutine(gm.respawnPlayer (player.playerNum));
+        if (player.lives>0) {
+            gm.StartCoroutine(gm.respawnPlayer(player.playerNum,player.lives));
+        }
+		
 	}
 
     void Update() {

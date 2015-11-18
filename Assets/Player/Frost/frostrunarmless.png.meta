@@ -1,0 +1,187 @@
+fileFormatVersion: 2
+guid: 8cd15329d68c0134da006f48f478791a
+timeCreated: 1447369124
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: frostrunarmless_0
+    21300002: frostrunarmless_1
+    21300004: frostrunarmless_2
+    21300006: frostrunarmless_3
+    21300008: frostrunarmless_4
+    21300010: frostrunarmless_5
+    21300012: frostrunarmless_6
+    21300014: frostrunarmless_7
+    21300016: frostrunarmless_8
+    21300018: frostrunarmless_9
+    21300020: frostrunarmless_10
+    21300022: frostrunarmless_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: frostrunarmless_0
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 1587
+        width: 744
+        height: 1333
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: frostrunarmless_1
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 1560
+        width: 870
+        height: 1359
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: frostrunarmless_2
+      rect:
+        serializedVersion: 2
+        x: 2307
+        y: 1495
+        width: 721
+        height: 1370
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: frostrunarmless_3
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 1514
+        width: 564
+        height: 1401
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: frostrunarmless_4
+      rect:
+        serializedVersion: 2
+        x: 3648
+        y: 1523
+        width: 594
+        height: 1396
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: frostrunarmless_5
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 0
+        width: 697
+        height: 1423
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: frostrunarmless_6
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 0
+        width: 819
+        height: 1416
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: frostrunarmless_7
+      rect:
+        serializedVersion: 2
+        x: 1523
+        y: 27
+        width: 847
+        height: 1391
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: frostrunarmless_8
+      rect:
+        serializedVersion: 2
+        x: 2339
+        y: 13
+        width: 730
+        height: 1403
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: frostrunarmless_9
+      rect:
+        serializedVersion: 2
+        x: 3068
+        y: 16
+        width: 585
+        height: 1402
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: frostrunarmless_10
+      rect:
+        serializedVersion: 2
+        x: 3653
+        y: 4
+        width: 488
+        height: 1413
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: frostrunarmless_11
+      rect:
+        serializedVersion: 2
+        x: 4143
+        y: 50
+        width: 633
+        height: 1367
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
