@@ -7,7 +7,6 @@ public class Exploder : MonoBehaviour {
     private float damage;
 
     private float explosionTime = 5;
-
     public Transform explosionPrefab;
 
     void Start() {
@@ -17,9 +16,8 @@ public class Exploder : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	    if (Time.time - startTime + startDelta >= explosionTime) {
-            Transform explosion = (Transform)Instantiate(explosionPrefab,transform.position, transform.rotation);
-            Object[] o = FindObjectsOfType(typeof(Player));
-           
+            Transform explosionInstance = (Transform)Instantiate(explosionPrefab,transform.position, transform.rotation);
+            explosionInstance.GetComponent<Damager>().setDamage(damage);
             Destroy(this.gameObject);
         }
 	}
