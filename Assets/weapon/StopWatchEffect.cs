@@ -30,7 +30,7 @@ public class StopWatchEffect : MonoBehaviour
             {
                 timerStarted = false;
                 Debug.Log("Timer has ended");
-                slowPlayers();
+                speedPlayers();
                 Destroy(this.gameObject);
             }
             else
@@ -42,7 +42,7 @@ public class StopWatchEffect : MonoBehaviour
 	
 	}
 
-    void slowPlayers()
+    void speedPlayers()
     {
         Object[] currentPlayers = FindObjectsOfType<Player>();
         foreach(Player p in currentPlayers)
