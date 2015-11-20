@@ -56,7 +56,7 @@ namespace UnityStandardAssets._2D
             {
                 if (colliders[i].gameObject != gameObject)
                 {
-                    Debug.Log("grounded");
+                    //Debug.Log("grounded");
                     m_Grounded = true;
                 }
 
@@ -71,7 +71,7 @@ namespace UnityStandardAssets._2D
 
         public void Move(float move, bool crouch, bool jump)
         {
-            Debug.Log("move is called");
+            //Debug.Log("move is called");
             // If crouching, check to see if the character can stand up
             /*
             if (!crouch && m_Anim.GetBool("Crouch"))

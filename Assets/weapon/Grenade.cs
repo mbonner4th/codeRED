@@ -8,6 +8,21 @@ public class Grenade : Weapon {
     private bool startTimer = false;
     public float explodeTime = 5;
     // Update is called once per frame
+    public override void Awake()
+    {
+        firePoint = transform.FindChild("FirePoint");
+        endPoint = transform.FindChild("EndPoint");
+        if (firePoint == null)
+        {
+
+            Debug.LogError("No Firepoint");
+        }
+        if (endPoint == null)
+        {
+
+            Debug.LogError("No Endpoint");
+        }
+    }
     void Update()
     {
         if (startTimer)
@@ -47,15 +62,7 @@ public class Grenade : Weapon {
         thrownGrenadeExploder.setDelta(Time.time - throwTime);
         thrownGrenadeExploder.setExplosionTime(explodeTime);
         thrownGrenadeExploder.setDamage(damage);
-        trail.Add(thrownGrenade);
         //thrownGrenade.GetComponent<ArcMove>().initialThrow();
-        if (muzzleFlashPrefab != null)
-        {
-            Transform clone = (Transform)Instantiate(muzzleFlashPrefab, firePoint.position, firePoint.rotation);
-            clone.parent = firePoint;
-            float size = Random.Range(0.6f, 0.9f);
-            clone.localScale = new Vector3(size, size, size);
-            Destroy(clone.gameObject, 0.02f);
-        }
+
     }
 }

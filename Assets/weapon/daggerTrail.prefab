@@ -11,6 +11,7 @@ GameObject:
   - 114: {fileID: 11490420}
   - 212: {fileID: 21292146}
   - 61: {fileID: 6167714}
+  - 114: {fileID: 11423684}
   m_Layer: 0
   m_Name: daggerTrail
   m_TagString: Untagged
@@ -43,6 +44,17 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1.89999998, y: .75999999}
+--- !u!114 &11423684
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 166114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54a1df8e930caba41be96ba7a6e3e900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11490420
 MonoBehaviour:
   m_ObjectHideFlags: 1

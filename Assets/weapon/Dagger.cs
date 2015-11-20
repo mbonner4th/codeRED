@@ -2,36 +2,23 @@
 using System.Collections;
 
 public class Dagger : Weapon {
+    public override void Awake () {
+		firePoint = transform.FindChild ("FirePoint");
+        endPoint = transform.FindChild("EndPoint");
+        if (firePoint == null) {
+		
+			Debug.LogError("No Firepoint");
+		}
+        if (endPoint == null)
+        {
 
+            Debug.LogError("No Endpoint");
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-        if (trail.Count > 0)
-        {
-            Object[] o = FindObjectsOfType(typeof(Player));
-
-            for (int i = 0; i < trail.Count; i++)
-            {
-                Transform t = (Transform)trail[i];
-                if (t != null)
-                {
-                    foreach (Player p in o)
-                    {
-
-                        if (Physics2D.IsTouching(((Transform)t).GetComponent<Collider2D>(),
-                                ((Player)p).GetComponent<Collider2D>()))
-                        {
-                            Debug.Log(p);
-                            ((Player)p).GetComponent<Player>().damagePlayer((int)damage);
-                            Destroy(((Transform)t).gameObject);
-                        }
-                    }
-                }
-
-            }
-
-        }
-
+       
 
     }
 
@@ -64,14 +51,9 @@ public class Dagger : Weapon {
 
     public override void Effect()
     {
-        trail.Add((Transform)Instantiate(BulletTrailPrefab, firePoint.position, firePoint.rotation));
-        if (muzzleFlashPrefab != null)
-        {
-            Transform clone = (Transform)Instantiate(muzzleFlashPrefab, firePoint.position, firePoint.rotation);
-            clone.parent = firePoint;
-            float size = Random.Range(0.6f, 0.9f);
-            clone.localScale = new Vector3(size, size, size);
-            Destroy(clone.gameObject, 0.02f);
-        }
+        Transform t = (Transform)Instantiate(BulletTrailPrefab, firePoint.position, firePoint.rotation);
+        t.GetComponent<Damager>().setOwner(transform.parent.parent.GetComponent<Player>().playerNum);
+        t.GetComponent<Damager>().setDamage(damage);
+
     }
 }
