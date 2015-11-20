@@ -7,6 +7,7 @@ public class ClassicDew : Weapon {
     private bool startTimer = false;
     public float explodeTime = 1;
     // Update is called once per frame
+
     void Update()
     {
         if (startTimer)
