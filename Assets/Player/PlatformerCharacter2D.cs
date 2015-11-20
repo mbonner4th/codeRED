@@ -48,7 +48,7 @@ namespace UnityStandardAssets._2D
         private void FixedUpdate()
         {
             m_Grounded = false;
-            Debug.Log(m_Grounded);
+            //Debug.Log(m_Grounded);
 
             // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
             // This can be done using layers instead but Sample Assets will not overwrite your project settings.
@@ -57,7 +57,7 @@ namespace UnityStandardAssets._2D
             {
                 if (colliders[i].gameObject != gameObject)
                 {
-                    Debug.Log("grounded");
+                    //Debug.Log("grounded");
                     m_Grounded = true;
                 }
 
@@ -72,7 +72,7 @@ namespace UnityStandardAssets._2D
 
         public void Move(float move, bool crouch, bool jump)
         {
-            Debug.Log("move is called");
+            //Debug.Log("move is called");
             // If crouching, check to see if the character can stand up
             /*
             if (!crouch && m_Anim.GetBool("Crouch"))
@@ -114,7 +114,7 @@ namespace UnityStandardAssets._2D
             // If the player should jump...
             if (m_Grounded && jump)
             {
-                Debug.Log("jump");
+              //  Debug.Log("jump");
                 // Add a vertical force to the player.
                 m_Grounded = false;
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
