@@ -17,4 +17,13 @@ public class ArcMove : MonoBehaviour {
         first.y = initialY;
         GetComponent<Rigidbody2D>().velocity = first;
     }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log(other.gameObject.tag);
+        if (other.gameObject.tag == "teleporter")
+        {
+
+            transform.position = other.gameObject.GetComponent<teleporter>().destination(transform.position);
+        }
+    }
 }

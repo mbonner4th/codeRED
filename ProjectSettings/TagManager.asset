@@ -6,7 +6,8 @@ TagManager:
   tags:
   - GameMaster
   - Spikes
-  - Box
+  - teleporter
+  - Structures
   layers:
   - Default
   - TransparentFX

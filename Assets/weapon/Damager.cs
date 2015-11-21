@@ -24,6 +24,7 @@ public class Damager : MonoBehaviour {
     }
     void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log(other.gameObject.tag);
         if (other.gameObject.tag == "Player")
         {
             if (hasOwner && other.GetComponent<Player>().playerNum != owner)
@@ -38,7 +39,7 @@ public class Damager : MonoBehaviour {
         } else if (other.gameObject.tag == "Structures") {
             if (!hitStructures) {
                 Destroy(this.gameObject);
-            }    
+            }
         }
     }
 

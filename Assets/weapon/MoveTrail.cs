@@ -11,4 +11,5 @@ public class MoveTrail : MonoBehaviour {
 		Destroy (this.gameObject, 1);
 	}
 
+
 }
