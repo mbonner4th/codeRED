@@ -73,11 +73,15 @@ public class Player : MonoBehaviour {
 
    void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("#triggered");
+ 
         if(other.gameObject.tag == "Spikes")
         {
-            Debug.Log("Spiked");
+
             damagePlayer(1000);
+        }
+        if (other.gameObject.tag == "teleporter") {
+
+            transform.position = other.gameObject.GetComponent<teleporter>().destination(transform.position);
         }
     }
 

@@ -3,6 +3,12 @@ using System.Collections;
 
 public class Mine : Weapon {
 
+    public override void Awake()
+    {
+        firePoint = transform.FindChild("FirePoint");
+        endPoint = transform.FindChild("EndPoint");
+    }
+
     public override void Shoot() {
         if (uses >= charges) {
             return;
@@ -17,7 +23,8 @@ public class Mine : Weapon {
 
     public override void Effect()
     {
-        ((Transform)Instantiate(BulletTrailPrefab, firePoint.position, firePoint.rotation)).GetComponent<MineEffect>().setDamage(damage);
+        Transform btp = (Transform)Instantiate(BulletTrailPrefab, firePoint.position, firePoint.rotation);
+        btp.GetComponent<MineEffect>().setDamage(damage);
         if (muzzleFlashPrefab != null) {
             Transform clone = (Transform)Instantiate(muzzleFlashPrefab, firePoint.position, firePoint.rotation);
             clone.parent = firePoint;

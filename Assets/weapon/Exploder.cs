@@ -18,6 +18,7 @@ public class Exploder : MonoBehaviour {
 	    if (Time.time - startTime + startDelta >= explosionTime) {
             Transform explosionInstance = (Transform)Instantiate(explosionPrefab,transform.position, transform.rotation);
             explosionInstance.GetComponent<Damager>().setDamage(damage);
+            explosionInstance.GetComponent<Damager>().setStructures(true);
             Destroy(this.gameObject);
         }
 	}
