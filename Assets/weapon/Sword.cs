@@ -9,13 +9,12 @@ public class Sword : Weapon {
     public float stopSwingTime;
     private float startTime;
     private Vector3 swingDifference;
-    private Quaternion startRotation;
 
-    void Awake() {
+    public override void Awake() {
         float timeDiff = Time.deltaTime;
         swingDifference.x = 0;
         swingDifference.y = 0;
-        swingDifference.z = -1*(90 - stopSwingAngle)/stopSwingTime*timeDiff;
+        swingDifference.z = -1*(75 - stopSwingAngle)/stopSwingTime*timeDiff;
     }
 
 	// Update is called once per frame
@@ -37,7 +36,16 @@ public class Sword : Weapon {
     public override void Shoot() {
         if (uses == charges) { return; }
         if (!shooting) {
-            startRotation = transform.rotation;
+            Vector3 rotate90down;
+            rotate90down.x = 0;
+            rotate90down.y = 0;
+            rotate90down.z = -90;
+            transform.Rotate(rotate90down);
+            Vector3 rotateUp;
+            rotateUp.x = 0;
+            rotateUp.y = 0;
+            rotateUp.z = 75;
+            transform.parent.Rotate(rotateUp);
             uses++;
             shooting = true;
             startTime = Time.time;
@@ -45,10 +53,27 @@ public class Sword : Weapon {
     }
 
     public override void Effect() {
-        transform.Rotate(swingDifference);
+        transform.parent.Rotate(swingDifference);
         if(Time.time - startTime >= stopSwingTime) {
             shooting = false;
-            transform.rotation = startRotation;
+            Quaternion armRotation;
+            if (transform.parent.localRotation.w > 0.5) { //Facing right
+                armRotation.w = 1;
+                armRotation.x = 0;
+                armRotation.y = 0;
+                armRotation.z = 0;
+            } else {
+                armRotation.w = 0;
+                armRotation.x = 0;
+                armRotation.y = 1;
+                armRotation.z = 0;
+            }
+            transform.parent.rotation = armRotation;
+            Vector3 rotate90;
+            rotate90.x = 0;
+            rotate90.y = 0;
+            rotate90.z = 90;
+            transform.Rotate(rotate90);
         }
     }
 
