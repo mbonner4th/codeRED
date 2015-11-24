@@ -62,7 +62,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 499100}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weaponPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 471540}
   - 212: {fileID: 21284832}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.51000023, y: 4.34000015, z: 0}
+  m_LocalPosition: {x: 8.45800018, y: 4.34000015, z: 0}
   m_LocalScale: {x: -.5, y: .5, z: 1}
   m_Children:
   - {fileID: 471540}
@@ -147,8 +147,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 195704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0399999991, y: -.0900000036, z: 0}
-  m_LocalScale: {x: .564482868, y: .564483702, z: 1}
+  m_LocalPosition: {x: 0, y: .592999995, z: -.503000021}
+  m_LocalScale: {x: 1.19402051, y: .682222307, z: 1.00714779}
   m_Children:
   - {fileID: 499100}
   m_Father: {fileID: 447778}
@@ -179,7 +179,6 @@ Transform:
   m_RootOrder: 0
 --- !u!50 &5067804
 Rigidbody2D:
-  serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -188,11 +187,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 3
+  m_FixedAngle: 1
   m_IsKinematic: 0
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!58 &5808576
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -356,9 +355,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1502188323
+  m_SortingLayerID: -1125059069
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300018, guid: a6b8eea6d2508fe4fa5a04cd210a06e1, type: 3}
+  m_Sprite: {fileID: 21300024, guid: c24260e0a0534844e909106a821520d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

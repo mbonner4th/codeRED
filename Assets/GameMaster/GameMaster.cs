@@ -13,6 +13,7 @@ public class GameMaster : MonoBehaviour {
 	public static GameMaster gm;
 
 	void Start(){
+        Debug.Log("gm is made here");
 		if (gm == null) {
 			gm = GameObject.FindGameObjectWithTag ("GameMaster").GetComponent<GameMaster>();
 		}

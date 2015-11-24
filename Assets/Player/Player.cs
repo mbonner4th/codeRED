@@ -32,10 +32,13 @@ public class Player : MonoBehaviour {
             invincible = false;
         }
         if (transform.position.y <= fallBoundary)
-            GameMaster.killPlayer(this);
-        if (GameMaster.gm)
         {
-            if (!GameMaster.gm.Paused)
+            damagePlayer(1000);
+        }
+
+        if (GameMaster.gm || GameManager.gm)
+        {
+            if (true)
             {
                 if (playerNum == 1)
                 {
@@ -76,7 +79,7 @@ public class Player : MonoBehaviour {
  
         if(other.gameObject.tag == "Spikes")
         {
-
+            Debug.Log("spikes");
             damagePlayer(1000);
         }
         if (other.gameObject.tag == "teleporter") {
@@ -90,12 +93,17 @@ public class Player : MonoBehaviour {
             playerStats.Health -= damage;
             if (playerStats.Health <= 0)
             {
-                Debug.Log("Player Is Kill");
-                m_Anim.SetBool("isKill", true);
-                GameMaster.killPlayer(this);
+                //Debug.Log("Player Is Kill");
+                //m_Anim.SetBool("isKill", true);
+                GameManager.killPlayer(this);
             }
         }
 	}
+
+    public void setPlayerNum(int playerNumber){
+        this.playerNum = playerNumber;
+        Debug.Log("player number is now: " + playerNumber);
+    }
 
     public void release() {
         if (myWeapon != null) {
