@@ -132,7 +132,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 152924}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: 1.25999999, z: 0}
+  m_LocalPosition: {x: 14.9209509, y: 5.53592777, z: 0}
   m_LocalScale: {x: 1.77153301, y: 1.77153039, z: 1}
   m_Children:
   - {fileID: 423342}
@@ -179,6 +179,7 @@ Transform:
   m_RootOrder: 1
 --- !u!50 &5069670
 Rigidbody2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -187,11 +188,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 3
-  m_FixedAngle: 0
   m_IsKinematic: 0
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!58 &5856204
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -215,9 +216,9 @@ BoxCollider2D:
   m_Material: {fileID: 6200000, guid: 1f25d56df0f52fd419614e53d17fd689, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -.129999995}
   serializedVersion: 2
-  m_Size: {x: .25, y: .680000007}
+  m_Size: {x: .300000012, y: 1}
 --- !u!95 &9525554
 Animator:
   serializedVersion: 3
@@ -279,6 +280,8 @@ MonoBehaviour:
     Health: 100
   fallBoundary: -20
   playerNum: 2
+  lives: 5
+  invinicbleDuration: 2
 --- !u!212 &21218860
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -363,7 +366,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 152924}

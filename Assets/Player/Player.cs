@@ -119,9 +119,10 @@ public class Player : MonoBehaviour {
         weaponPoint = arm.FindChild("weaponPoint");
         Object[] o = FindObjectsOfType(typeof(Weapon));//look for all weapons on the map
         foreach (Weapon n in o) {
-            if (Physics2D.IsTouching(this.GetComponent<Collider2D>(), 
+            if (Physics2D.IsTouching(this.GetComponent<BoxCollider2D>(), 
                         ((Weapon)n).GetComponent<Collider2D>())) { //check is the player touching any weapon
                 if (arm.childCount>1) {// Destroy the old weapon in arm
+                    Debug.Log("touching");
                     Destroy(arm.GetChild(1).gameObject);
                     myWeapon = null;
 
