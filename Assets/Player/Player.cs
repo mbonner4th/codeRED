@@ -122,6 +122,9 @@ public class Player : MonoBehaviour {
         invinicbleDuration = duration;
         invincibleTime = Time.time;
     }
+    public Weapon getWeapon() {
+        return myWeapon;
+    }
     public void pickUp() {
         arm = transform.FindChild("arm");
         weaponPoint = arm.FindChild("weaponPoint");
