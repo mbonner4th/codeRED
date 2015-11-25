@@ -19,6 +19,7 @@ namespace UnityStandardAssets._2D
         private Animator m_Anim;            // Reference to the player's animator component.
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+        private bool stillAlive = true;
 
 
 		Transform playerGraphics;			//reference to graphics so wecan change direction
@@ -72,21 +73,6 @@ namespace UnityStandardAssets._2D
 
         public void Move(float move, bool crouch, bool jump)
         {
-            //Debug.Log("move is called");
-            // If crouching, check to see if the character can stand up
-            /*
-            if (!crouch && m_Anim.GetBool("Crouch"))
-            {
-                // If the character has a ceiling preventing them from standing up, keep them crouching
-                if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
-                {
-                    crouch = true;
-                }
-            }
-            */
-
-            // Set whether or not the character is crouching in the animator
-            //m_Anim.SetBool("Crouch", crouch);
 
             //only control the player if grounded or airControl is turned on
                 // Reduce the speed if crouching by the crouchSpeed multiplier
