@@ -3,7 +3,16 @@ using System.Collections;
 
 public class GameMaster : MonoBehaviour {
     private bool paused;
-
+    public Transform playerPrefab;
+    public Transform player2Prefab;
+    public Transform spawnPoint;
+    public Transform spawnPoint2;
+    public Transform player1;
+    public Transform player2;
+    public int spawnDelay = 2;
+    public int numPlayers = 2;
+    public int player1lives = 5;
+    public int player2lives = 5;
     public bool Paused {
         get {
             return paused;
@@ -16,30 +25,31 @@ public class GameMaster : MonoBehaviour {
 		if (gm == null) {
 			gm = GameObject.FindGameObjectWithTag ("GameMaster").GetComponent<GameMaster>();
 		}
-	}
+        
+    }
 
-	public Transform playerPrefab;
-    public Transform player2Prefab;
-	public Transform spawnPoint;
-    public Transform spawnPoint2;
-	public int spawnDelay = 2;
-    public int numPlayers = 2;
-
-	public IEnumerator respawnPlayer(int num_Player,int lives){
+    
+    public IEnumerator respawnPlayer(int num_Player,int lives){
 
 		yield return new WaitForSeconds (spawnDelay);
-
+        Debug.Log("spawn");
         if (num_Player == 1)
         {
+            Debug.Log("spawn1");
             Transform p = (Transform)Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
+            player1 = p;
             p.GetComponent<Player>().lives = lives - 1;
+            player1lives -= 1;
         }
 
         else if (num_Player == 2) {
             Transform p = (Transform)Instantiate(player2Prefab, spawnPoint2.position, spawnPoint2.rotation);
+            player2 = p;
             p.GetComponent<Player>().lives = lives - 1;
+            player2lives -= 1;
+
         }
-            
+
 
     }
 
