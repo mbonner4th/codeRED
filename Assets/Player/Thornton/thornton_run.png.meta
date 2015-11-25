@@ -1,9 +1,23 @@
 fileFormatVersion: 2
 guid: 76cc4f486a7d4524893b89b2632d362d
-timeCreated: 1447816453
+timeCreated: 1448412435
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: thornton_run_0
+    21300002: thornton_run_1
+    21300004: thornton_run_2
+    21300006: thornton_run_3
+    21300008: thornton_run_4
+    21300010: thornton_run_5
+    21300012: thornton_run_6
+    21300014: thornton_run_7
+    21300016: thornton_run_8
+    21300018: thornton_run_9
+    21300020: thornton_run_10
+    21300022: thornton_run_11
+    21300024: thornton_run_12
+    21300026: thornton_run_13
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,14 +44,14 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -48,7 +62,147 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: thornton_run_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 810
+        width: 402
+        height: 644
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: thornton_run_1
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 791
+        width: 432
+        height: 649
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: thornton_run_2
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 784
+        width: 350
+        height: 653
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: thornton_run_3
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 773
+        width: 286
+        height: 676
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: thornton_run_4
+      rect:
+        serializedVersion: 2
+        x: 1697
+        y: 784
+        width: 294
+        height: 673
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: thornton_run_5
+      rect:
+        serializedVersion: 2
+        x: 2087
+        y: 799
+        width: 354
+        height: 658
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: thornton_run_6
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 0
+        width: 414
+        height: 740
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: thornton_run_7
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 13
+        width: 424
+        height: 739
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: thornton_run_8
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 45
+        width: 332
+        height: 672
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: thornton_run_9
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 48
+        width: 266
+        height: 675
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: thornton_run_10
+      rect:
+        serializedVersion: 2
+        x: 1594
+        y: 48
+        width: 246
+        height: 683
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: thornton_run_11
+      rect:
+        serializedVersion: 2
+        x: 1951
+        y: 68
+        width: 319
+        height: 660
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: thornton_run_12
+      rect:
+        serializedVersion: 2
+        x: 2315
+        y: 392
+        width: 146
+        height: 152
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: thornton_run_13
+      rect:
+        serializedVersion: 2
+        x: 2403
+        y: 92
+        width: 66
+        height: 213
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 
