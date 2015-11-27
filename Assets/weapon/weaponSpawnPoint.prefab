@@ -39,9 +39,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2721b2c185b43c4d844d18f1d0f7e29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dagger: {fileID: 487412, guid: 311487f8daf6de54286861077c3ba5ea, type: 2}
-  grenade: {fileID: 438932, guid: 93ec36464cc542e48a2a2c9698f0172e, type: 2}
-  spawnCooldown: 3
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -50,9 +47,93 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: rareWeapon.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: commonWeapon.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: uncommonWeapon.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rareConsumable.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: commonConsumable.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: uncommonConsumable.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: grenade
       value: 
       objectReference: {fileID: 438932, guid: 93ec36464cc542e48a2a2c9698f0172e, type: 2}
+    - target: {fileID: 0}
+      propertyPath: commonWeapon.Array.data[0]
+      value: 
+      objectReference: {fileID: 487412, guid: 311487f8daf6de54286861077c3ba5ea, type: 2}
+    - target: {fileID: 0}
+      propertyPath: commonWeapon.Array.data[1]
+      value: 
+      objectReference: {fileID: 438932, guid: 93ec36464cc542e48a2a2c9698f0172e, type: 2}
+    - target: {fileID: 0}
+      propertyPath: commonWeapon.Array.data[2]
+      value: 
+      objectReference: {fileID: 417020, guid: d582c6ca8e2aeea48ae8cb68010220e8, type: 2}
+    - target: {fileID: 0}
+      propertyPath: uncommonWeapon.Array.data[0]
+      value: 
+      objectReference: {fileID: 479352, guid: 950691515031bc54fbc4d7515f5e4b0f, type: 2}
+    - target: {fileID: 0}
+      propertyPath: rareWeapon.Array.data[0]
+      value: 
+      objectReference: {fileID: 442772, guid: 24016cce32edc884a89c6de4c388ef3e, type: 2}
+    - target: {fileID: 0}
+      propertyPath: rareWeapon.Array.data[1]
+      value: 
+      objectReference: {fileID: 461440, guid: e73212380f49b9d49b221b8461b60c53, type: 2}
+    - target: {fileID: 0}
+      propertyPath: commonConsumable.Array.data[0]
+      value: 
+      objectReference: {fileID: 430134, guid: d77789f1bc5aaf74db4e187cbb2a874a, type: 2}
+    - target: {fileID: 0}
+      propertyPath: uncommonConsumable.Array.data[0]
+      value: 
+      objectReference: {fileID: 494250, guid: 0c9d35a5391cf8d4e86620ba4b4c87c5, type: 2}
+    - target: {fileID: 0}
+      propertyPath: uncommonConsumable.Array.data[1]
+      value: 
+      objectReference: {fileID: 463884, guid: 2532c85f5a3700045bb0763822146080, type: 2}
+    - target: {fileID: 0}
+      propertyPath: rareConsumable.Array.data[0]
+      value: 
+      objectReference: {fileID: 422716, guid: 554c202d2e2a7474c8623bab2e6a0ebc, type: 2}
+    - target: {fileID: 0}
+      propertyPath: rareConsumable.Array.data[1]
+      value: 
+      objectReference: {fileID: 471274, guid: e49d8ccac489bd24ca1e74a2ee14c14f, type: 2}
+    - target: {fileID: 0}
+      propertyPath: commonProbability
+      value: .699000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: uncommonProbability
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rareProbability
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: WeaponVsConsumable
+      value: .699999988
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 178312}
