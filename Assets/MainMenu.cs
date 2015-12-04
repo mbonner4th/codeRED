@@ -6,4 +6,5 @@ public class MainMenu : MonoBehaviour {
     public void StartGame(string level) {
         Application.LoadLevel(level);
     }
+
 }
