@@ -11,7 +11,7 @@ namespace UnityStandardAssets._2D
         public float lookAheadFactor = 3;
         public float lookAheadReturnSpeed = 0.5f;
         public float lookAheadMoveThreshold = 0.1f;
-		public float yRestriction = -1;
+		public float yRestriction = -16;
         public float minY = 10;
 
         private float m_OffsetZ;

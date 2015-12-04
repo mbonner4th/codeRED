@@ -3,11 +3,8 @@ using System.Collections;
 
 public class StopWatchEffect : MonoBehaviour
 {
-    private int ownerNum;
     private bool timerStarted = true;
     private float timerDuration = 6.0f;
-    Player[] slowedPlayers;
-    bool setInstantiated = false;
 
 	// Use this for initialization
 	void Start () {
@@ -18,11 +15,7 @@ public class StopWatchEffect : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if(!setInstantiated)
-        {
-            slowedPlayers = FindObjectsOfType<Player>();
-            setInstantiated = true;
-        }
+        
 
         if(timerStarted)
         {
@@ -47,20 +40,14 @@ public class StopWatchEffect : MonoBehaviour
         Object[] currentPlayers = FindObjectsOfType<Player>();
         foreach(Player p in currentPlayers)
         {
-            foreach(Player sp in slowedPlayers)
-            {
-                if(p.Equals(sp) && p.playerNum != ownerNum)
+                if(p.getIsSlowed())
                 {
                     p.GetComponent<UnityStandardAssets._2D.PlatformerCharacter2D>().multiplySpeed(2);
                     p.GetComponent<UnityStandardAssets._2D.PlatformerCharacter2D>().multiplyJump(2);
+                    p.setIsSlowed(false);
                     break;
                 }
-            }
         }
     }
 
-    public void setPlayerNum(int myPlayernum)
-    {
-        ownerNum = myPlayernum;
-    }
 }

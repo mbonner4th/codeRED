@@ -13,6 +13,7 @@ public class Player : MonoBehaviour {
     public int playerNum;
     public int lives;
     public int invinicbleDuration = 2;
+    
 
     private float invincibleTime;
     private bool invincible = false;
@@ -20,6 +21,8 @@ public class Player : MonoBehaviour {
     private Weapon myWeapon = null;
     private Transform weaponPoint; //where to put the weapon
     private Animator m_Anim;            // Reference to the player's animator component.
+    private bool isSped = false;
+    private bool isSlowed = false;
 
     private void Awake(){
         m_Anim = GetComponent<Animator>();
@@ -122,6 +125,27 @@ public class Player : MonoBehaviour {
         invinicbleDuration = duration;
         invincibleTime = Time.time;
     }
+
+    public void setIsSlowed(bool slowed)
+    {
+        isSlowed = slowed;
+    }
+
+    public void setIsSped(bool sped)
+    {
+        isSped = sped;
+    }
+
+    public bool getIsSlowed()
+    {
+        return isSlowed;
+    }
+
+    public bool getIsSped()
+    {
+        return isSped;
+    }
+
     public Weapon getWeapon() {
         return myWeapon;
     }

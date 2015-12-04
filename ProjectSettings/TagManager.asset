@@ -8,6 +8,8 @@ TagManager:
   - Spikes
   - teleporter
   - Structures
+  - Hazard
+  - Platform
   layers:
   - Default
   - TransparentFX

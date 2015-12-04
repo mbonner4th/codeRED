@@ -6,16 +6,11 @@ public class BajaBlastEffect : MonoBehaviour
 
     private bool startTimer = true;
     private float timerDuration = 6.0f;
-    private UnityStandardAssets._2D.PlatformerCharacter2D myPlayer;
 
     // Use this for initialization
-    void Start () {
-	
-	}
-
-    public void setMyPlayer(UnityStandardAssets._2D.PlatformerCharacter2D myPlayer)
+    void Start()
     {
-        this.myPlayer = myPlayer;
+
     }
 
     // Update is called once per frame
@@ -41,11 +36,10 @@ public class BajaBlastEffect : MonoBehaviour
         UnityStandardAssets._2D.PlatformerCharacter2D[] players = FindObjectsOfType<UnityStandardAssets._2D.PlatformerCharacter2D>();
         foreach(UnityStandardAssets._2D.PlatformerCharacter2D p in players)
         {
-            if(p.Equals(myPlayer))
-            {
-                p.multiplyJump(0.8f);
-                p.multiplySpeed(0.8f);
-            }
+            p.multiplyJump(0.8f);
+            p.multiplySpeed(0.8f);
+            p.GetComponent<Player>().setIsSped(false);
+            Debug.Log("slowed");
         }
     }
 }
