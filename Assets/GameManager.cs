@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
     public bool debugMode = false;
     public Transform playerPrefab;
     public Transform player2Prefab;
-    public Transform[] spawnPoints;
+    public GameObject[] spawnPoints;
     private float spawnPointRange; //need this for randomly getting spawn point
     public Transform Jail;
 
@@ -17,7 +17,10 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 	    playerPrefab.GetComponent<Player>().setPlayerNum(1);
         player2Prefab.GetComponent<Player>().setPlayerNum(2);
+        spawnPoints = GameObject.FindGameObjectsWithTag("PlayerSpawner");
+        
         spawnPointRange = (float)spawnPoints.Length;
+        Debug.Log(spawnPointRange);
 	}
      void Awake(){
          gm = this;
@@ -34,7 +37,7 @@ public class GameManager : MonoBehaviour {
          }
          int randomNumbSpawn = Mathf.FloorToInt(Random.Range(0.1f, spawnPointRange));
          Debug.Log("respawning at: " + randomNumbSpawn);
-         player.transform.position = spawnPoints[randomNumbSpawn].position;
+         player.transform.position = spawnPoints[randomNumbSpawn].transform.position;
          //Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
      }
 
@@ -46,6 +49,10 @@ public class GameManager : MonoBehaviour {
          --player.lives;
          
          player.transform.position = gm.Jail.position;
+         if (player.transform.FindChild("arm").childCount == 2)
+         {
+             Destroy(player.transform.FindChild("arm").GetChild(1).gameObject);
+         }
          //player.transform.position = gm.gameObject.transform.GetChild(0).position;
          Renderer[] rs = player.GetComponentsInChildren<Renderer>();
          foreach(Renderer r in rs){

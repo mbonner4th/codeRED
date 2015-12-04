@@ -45,4 +45,9 @@ public class Weapon : MonoBehaviour {
     public int getChargesleft() {
         return charges - uses;
     }
+
+    public void destroyWeapon()
+    {
+        Destroy(this.gameObject);
+    }
 }

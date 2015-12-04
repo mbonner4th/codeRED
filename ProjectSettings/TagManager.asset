@@ -8,6 +8,8 @@ TagManager:
   - Spikes
   - teleporter
   - Structures
+  - PlayerSpawner
+  - Platform
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - Player
   - Platform
   - Background
-  - 
+  - Foreground
   - 
   - 
   - 
@@ -48,7 +50,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: PLayer
+  - name: Player
     uniqueID: 1502188323
     locked: 0
   - name: Foreground
