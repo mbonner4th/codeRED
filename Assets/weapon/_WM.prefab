@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &103372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 412004}
+  - 114: {fileID: 11482924}
+  m_Layer: 0
+  m_Name: _WM
+  m_TagString: GameMaster
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &412004
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103372}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -19, y: -.400000006, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11482924
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b409051b451c5654d95d2d7d979b9976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnCooldown: 3
+  commonWeapon:
+  - {fileID: 487412, guid: 311487f8daf6de54286861077c3ba5ea, type: 2}
+  - {fileID: 438932, guid: 93ec36464cc542e48a2a2c9698f0172e, type: 2}
+  - {fileID: 417020, guid: d582c6ca8e2aeea48ae8cb68010220e8, type: 2}
+  uncommonWeapon:
+  - {fileID: 479352, guid: 950691515031bc54fbc4d7515f5e4b0f, type: 2}
+  rareWeapon:
+  - {fileID: 461440, guid: e73212380f49b9d49b221b8461b60c53, type: 2}
+  - {fileID: 442772, guid: 24016cce32edc884a89c6de4c388ef3e, type: 2}
+  commonConsumable:
+  - {fileID: 430134, guid: d77789f1bc5aaf74db4e187cbb2a874a, type: 2}
+  uncommonConsumable:
+  - {fileID: 463884, guid: 2532c85f5a3700045bb0763822146080, type: 2}
+  - {fileID: 494250, guid: 0c9d35a5391cf8d4e86620ba4b4c87c5, type: 2}
+  rareConsumable:
+  - {fileID: 422716, guid: 554c202d2e2a7474c8623bab2e6a0ebc, type: 2}
+  - {fileID: 471274, guid: e49d8ccac489bd24ca1e74a2ee14c14f, type: 2}
+  commonProbability: .699000001
+  uncommonProbability: .200000003
+  rareProbability: .100000001
+  WeaponVsConsumable: .100000001
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 103372}
+  m_IsPrefabParent: 1

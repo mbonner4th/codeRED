@@ -8,7 +8,9 @@ TagManager:
   - Spikes
   - teleporter
   - Structures
+  - Hazard
   - PlayerSpawner
+  - Platform
   - Platform
   layers:
   - Default
