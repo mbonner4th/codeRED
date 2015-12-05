@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
     public Transform Frost;
     public Transform ThorntonPrefab;
     public Transform Thornton;
-    public Transform[] spawnPoints;
+    public GameObject[] spawnPoints;
     private float spawnPointRange; //need this for randomly getting spawn point
     public Transform Jail;
 
@@ -23,20 +23,21 @@ public class GameManager : MonoBehaviour {
     }
     void Awake(){
         gm = this;
+        spawnPoints = GameObject.FindGameObjectsWithTag("PlayerSpawner");
         spawnPointRange = (float)spawnPoints.Length;
-        if (CharacterSelectionMenu.frost1 == true)
-        {
+        if (CharacterSelectionMenu.frost1 == true){
             FrostPrefab.GetComponent<Player>().setPlayerNum(1);
             ThorntonPrefab.GetComponent<Player>().setPlayerNum(2);
-        }
-        else
-        {
+        }else{
             FrostPrefab.GetComponent<Player>().setPlayerNum(2);
             ThorntonPrefab.GetComponent<Player>().setPlayerNum(1);
         }
-        Frost = (Transform)Instantiate(FrostPrefab, spawnPoints[Mathf.FloorToInt(Random.Range(0.1f, spawnPointRange))].position, FrostPrefab.rotation);
-        Thornton = (Transform)Instantiate(ThorntonPrefab, spawnPoints[Mathf.FloorToInt(Random.Range(0.1f, spawnPointRange))].position, ThorntonPrefab.rotation);
+
+        Frost = (Transform)Instantiate(FrostPrefab, spawnPoints[Mathf.FloorToInt(Random.Range(0.1f, spawnPointRange))].transform.position, FrostPrefab.rotation);
+        Thornton = (Transform)Instantiate(ThorntonPrefab, spawnPoints[Mathf.FloorToInt(Random.Range(0.1f, spawnPointRange))].transform.position, ThorntonPrefab.rotation);
     }
+    
+
 
     public IEnumerator respawnPlayer(Player player)
      {
@@ -49,7 +50,7 @@ public class GameManager : MonoBehaviour {
          }
          int randomNumbSpawn = Mathf.FloorToInt(Random.Range(0.1f, spawnPointRange));
          Debug.Log("respawning at: " + randomNumbSpawn);
-         player.transform.position = spawnPoints[randomNumbSpawn].position;
+         player.transform.position = spawnPoints[randomNumbSpawn].transform.position;
          //Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
      }
 
@@ -61,6 +62,10 @@ public class GameManager : MonoBehaviour {
          --player.lives;
          
          player.transform.position = gm.Jail.position;
+         if (player.transform.FindChild("arm").childCount == 2)
+         {
+             Destroy(player.transform.FindChild("arm").GetChild(1).gameObject);
+         }
          //player.transform.position = gm.gameObject.transform.GetChild(0).position;
          Renderer[] rs = player.GetComponentsInChildren<Renderer>();
          foreach(Renderer r in rs){
