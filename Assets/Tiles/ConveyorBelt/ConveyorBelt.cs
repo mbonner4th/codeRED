@@ -21,7 +21,7 @@ public class ConveyorBelt : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" || other.tag == "Grenade")
         {
             Vector3 v = other.transform.position;
             v.x += speed;
