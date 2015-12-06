@@ -5,8 +5,8 @@ namespace UnityStandardAssets._2D
 {
     public class Camera2DFollow : MonoBehaviour
     {
-        public Transform target1;
-        public Transform target2;
+        public Transform target1 = null;
+        public Transform target2 = null;
         public float damping = 1;
         public float lookAheadFactor = 3;
         public float lookAheadReturnSpeed = 0.5f;
@@ -25,16 +25,19 @@ namespace UnityStandardAssets._2D
         // Use this for initialization
         private void Start()
         {
-            midpoint = findMidpoint(target1.position,target2.position);
+            target1 = GameManager.gm.Frost;
+            target2 = GameManager.gm.Thornton;
+            midpoint = findMidpoint(target1.position, target2.position);
             m_LastTargetPosition = midpoint;
-            m_OffsetZ = (transform.position - midpoint).z+3;
+            m_OffsetZ = (transform.position - midpoint).z + 3;
             transform.parent = null;
-        }
 
+        }
 
         // Update is called once per frame
         public void Update()
         {
+
             if (target1 == null || target2 == null) {
 				findPlayer();
 				return;

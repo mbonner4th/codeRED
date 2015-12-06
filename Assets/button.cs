@@ -1,22 +1,21 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class button : MonoBehaviour {
-
-    public button MyButton;
+    public string buttonKey;
+    private Button thisButton;
 	// Use this for initialization
 	void Start () {
-       // MyButton.onClick();
-	
+        thisButton = GetComponent<Button>();
+        thisButton.interactable = false;
 	}
-
-    private void onClick()
-    {
-        throw new System.NotImplementedException();
-    }
 	
 	// Update is called once per frame
 	void Update () {
+        if (Input.GetKeyDown(buttonKey)) {
+            thisButton.onClick.Invoke();
+        }
 	
 	}
 }
