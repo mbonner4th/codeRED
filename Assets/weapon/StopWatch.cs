@@ -23,6 +23,7 @@ public class StopWatch : Weapon {
             {
                 p.GetComponent<UnityStandardAssets._2D.PlatformerCharacter2D>().multiplySpeed(0.5f);
                 p.GetComponent<UnityStandardAssets._2D.PlatformerCharacter2D>().multiplyJump(0.5f);
+                p.setIsSlowed(true);
             }
         }
     }
@@ -30,7 +31,7 @@ public class StopWatch : Weapon {
     public override void Effect()
     {
         slowPlayers();
-        Instantiate(BulletTrailPrefab).GetComponent<StopWatchEffect>().setPlayerNum(this.transform.parent.parent.GetComponent<Player>().playerNum);
+        Instantiate(BulletTrailPrefab).GetComponent<StopWatchEffect>();
         Destroy(this.gameObject);
     }
 

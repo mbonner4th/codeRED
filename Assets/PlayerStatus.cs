@@ -5,18 +5,22 @@ using System.Collections;
 public class PlayerStatus : MonoBehaviour {
 
     // Use this for initialization
-    public Text[] text;
-    public Text player1lives;
-    public Text player2lives;
-    public Text player1weapon;
-    public Text player2weapon;
-    public Image[] image;
-    public Image weapon1;
-    public Image weapon2;
+    
     public Transform player1;
     public Transform player2;
     public static GameMaster gm;
-	void Start () {
+
+    private Text[] text;
+    private Text player1lives;
+    private Text player2lives;
+    private Text player1weapon;
+    private Text player2weapon;
+    private Image[] image;
+    private Image weapon1;
+    private Image weapon2;
+    
+    void Start () {
+        
         if (gm == null)
         {
             gm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
@@ -29,6 +33,8 @@ public class PlayerStatus : MonoBehaviour {
         player2weapon = text[5];
         weapon1 = image[2];
         weapon2 = image[3];
+        player1 = GameManager.gm.Frost;
+        player2 = GameManager.gm.Thornton;
     }
 
     // Update is called once per frame

@@ -50,12 +50,14 @@ public class BajaBlast : Weapon
     {
         myPlayer.multiplyJump(1.25f);
         myPlayer.multiplySpeed(1.25f);
+        myPlayer.GetComponent<Player>().setIsSped(true);
+        Debug.Log("Sped");
     }
 
     public override void Effect()
     {
         SpeedPlayer();
-        Instantiate(BulletTrailPrefab).GetComponent<BajaBlastEffect>().setMyPlayer(myPlayer);
+        Instantiate(BulletTrailPrefab).GetComponent<BajaBlastEffect>();
         Destroy(this.gameObject);
     }
 }
