@@ -281,6 +281,9 @@ MonoBehaviour:
   playerNum: 2
   lives: 5
   invinicbleDuration: 2
+  Path: 
+  updateCount: 0
+  AION: 0
 --- !u!212 &21219520
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -343,6 +346,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_WhatIsGround.m_Bits
       value: 1792
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: AION
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
