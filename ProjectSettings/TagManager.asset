@@ -12,6 +12,7 @@ TagManager:
   - PlayerSpawner
   - Platform
   - Platform
+  - GameManager
   layers:
   - Default
   - TransparentFX
