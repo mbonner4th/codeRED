@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour {
          //player.transform.position = gm.gameObject.transform.GetChild(0).position;
          Renderer[] rs = player.GetComponentsInChildren<Renderer>();
          foreach(Renderer r in rs){
-            r.enabled = false;
+            //r.enabled = false;
          }
          //player.turnInvincible(gm.respawnDelay);
          if (player.lives >= 0)

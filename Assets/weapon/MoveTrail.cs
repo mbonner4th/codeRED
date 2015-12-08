@@ -8,7 +8,7 @@ public class MoveTrail : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         transform.Translate(Vector3.right*Time.deltaTime * moveSpeed);
-		Destroy (this.gameObject, 1);
+		Destroy (this.gameObject, 3);
 	}
 
 

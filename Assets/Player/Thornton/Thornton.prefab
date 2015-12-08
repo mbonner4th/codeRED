@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MaxSpeed: 10
-  m_JumpForce: 1300
+  m_JumpForce: 1000
   m_CrouchSpeed: .409999996
   m_AirControl: 0
   m_WhatIsGround:
@@ -350,6 +350,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: AION
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_JumpForce
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
