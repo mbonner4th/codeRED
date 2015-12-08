@@ -19,13 +19,13 @@ public class GameMaster : MonoBehaviour {
         }
     }
 
-	public static GameMaster gm;
+	//public static GameMaster gm;
 
 	void Start(){
         Debug.Log("gm is made here");
-		if (gm == null) {
-			gm = GameObject.FindGameObjectWithTag ("GameMaster").GetComponent<GameMaster>();
-		}
+//		if (gm == null) {
+	//		gm = GameObject.FindGameObjectWithTag ("GameMaster").GetComponent<GameMaster>();
+		//}
         
     }
 
@@ -57,7 +57,7 @@ public class GameMaster : MonoBehaviour {
 	public static void killPlayer(Player player){
 		Destroy (player.gameObject);
         if (player.lives>0) {
-            gm.StartCoroutine(gm.respawnPlayer(player.playerNum,player.lives));
+            //gm.StartCoroutine(gm.respawnPlayer(player.playerNum,player.lives));
         }
 		
 	}

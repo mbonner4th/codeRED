@@ -42,7 +42,7 @@ public class Player : MonoBehaviour {
             damagePlayer(1000);
         }
 
-        if (GameMaster.gm || GameManager.gm)
+        if (GameManager.gm)
         {
             if (true)
             {
