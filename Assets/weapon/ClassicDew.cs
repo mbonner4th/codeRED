@@ -35,6 +35,7 @@ public class ClassicDew : Weapon {
         {
             return;
         }
+        this.transform.GetComponent<AudioSource>().Play();
         startTimer = true;
         throwTime = Time.time;
     }

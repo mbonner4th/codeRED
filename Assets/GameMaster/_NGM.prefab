@@ -268,9 +268,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugMode: 0
-  FrostPrefab: {fileID: 0}
+  FrostPrefab: {fileID: 447778, guid: 61439391832a00b429ebed70da0b3090, type: 2}
   Frost: {fileID: 0}
-  ThorntonPrefab: {fileID: 0}
+  ThorntonPrefab: {fileID: 403148, guid: eb3a15f12d5669b40a7fd40ab02ec560, type: 2}
   Thornton: {fileID: 0}
   Jail: {fileID: 0}
   respawnDelay: 1
@@ -292,9 +292,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -320,9 +318,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -348,9 +344,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -376,9 +370,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -397,6 +389,14 @@ Prefab:
       propertyPath: m_TagString
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: FrostPrefab
+      value: 
+      objectReference: {fileID: 447778, guid: 61439391832a00b429ebed70da0b3090, type: 2}
+    - target: {fileID: 0}
+      propertyPath: ThorntonPrefab
+      value: 
+      objectReference: {fileID: 403148, guid: eb3a15f12d5669b40a7fd40ab02ec560, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 162714}

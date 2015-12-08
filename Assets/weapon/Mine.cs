@@ -16,6 +16,7 @@ public class Mine : Weapon {
         uses++;
         if (Time.time >= timeToSpawnEffect)
         {
+            this.transform.GetComponent<AudioSource>().Play();
             Effect();
             timeToSpawnEffect = Time.time * 1 / effectSpawnRate;
         }

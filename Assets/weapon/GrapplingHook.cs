@@ -45,6 +45,7 @@ public class GrapplingHook : Weapon {
 
     public override void Effect()
     {
+        this.transform.GetComponent<AudioSource>().Play();
         bullet = (Transform)Instantiate(BulletTrailPrefab, firePoint.position, firePoint.rotation);
         bullet.GetComponent<Hook>().setRight(firePoint.rotation);
         bullet.GetComponent<Hook>().setMyPlayer(transform.parent.parent);

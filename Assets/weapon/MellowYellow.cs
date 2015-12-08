@@ -17,6 +17,7 @@ public class MellowYellow : Weapon {
         {
             return;
         }
+        this.transform.GetComponent<AudioSource>().Play();
         Effect();
     }
 
