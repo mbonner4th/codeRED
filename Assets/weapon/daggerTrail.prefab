@@ -12,7 +12,7 @@ GameObject:
   - 212: {fileID: 21292146}
   - 61: {fileID: 6167714}
   - 114: {fileID: 11423684}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: daggerTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,6 +119,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Size.y
       value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
