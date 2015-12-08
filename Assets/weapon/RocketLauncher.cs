@@ -42,6 +42,7 @@ public class RocketLauncher : Weapon {
 
     public override void Effect()
     {
+        this.transform.GetComponent<AudioSource>().Play();
         myBullet = (Transform)Instantiate(BulletTrailPrefab, firePoint.position, firePoint.rotation);
         myBullet.GetComponent<ControlledMovement>().setPlayerNum(transform.parent.parent.GetComponent<Player>().playerNum);
         myBullet.GetComponent<ControlledMovement>().setParent(transform);

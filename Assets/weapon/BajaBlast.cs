@@ -13,15 +13,13 @@ public class BajaBlast : Weapon
     // Update is called once per frame
     void Update()
     {
-        if(!isInit)
-        {
-            myPlayer = this.transform.parent.parent.GetComponent<UnityStandardAssets._2D.PlatformerCharacter2D>();
-        }
+        
         if (startTimer)
         {
             if (Time.time - throwTime > explodeTime)
             {
                 startTimer = false;
+                myPlayer = this.transform.parent.parent.GetComponent<UnityStandardAssets._2D.PlatformerCharacter2D>();
                 Effect();
             }
         }
