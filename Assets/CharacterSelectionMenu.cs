@@ -4,6 +4,7 @@ using System.Collections;
 public class CharacterSelectionMenu : MonoBehaviour {
 
     static public bool frost1 = true;
+    static public bool AION = false;
     public void StartGame(string level)
     {
         Application.LoadLevel(level);
@@ -17,6 +18,16 @@ public class CharacterSelectionMenu : MonoBehaviour {
         else
         {
             frost1 = false;
+        }
+    }
+    public void SelectMode(string name) {
+        if (name == "survival")
+        {
+            AION = true;
+        }
+        else
+        {
+            AION = false;
         }
     }
 }

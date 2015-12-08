@@ -15,7 +15,7 @@ public class Player : MonoBehaviour {
 	public int invinicbleDuration = 2;
 	public string Path = "";
 	public int updateCount = 0;
-	public bool AION = false;
+
     
 
     private float invincibleTime;
@@ -42,7 +42,7 @@ public class Player : MonoBehaviour {
             damagePlayer(1000);
         }
 
-        if (GameMaster.gm || GameManager.gm)
+        if (GameManager.gm)
         {
             if (true)
             {
@@ -75,7 +75,7 @@ public class Player : MonoBehaviour {
                     {
                         release();
                     }
-					if(AION)
+					if(CharacterSelectionMenu.AION)
 					{
 						updateCount+=1;
 						if(updateCount%8==0) Path = asterisk (transform.position.x,transform.position.y,2f,5f,0,false);
