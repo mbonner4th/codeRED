@@ -8,7 +8,7 @@ public class PlayerStatus : MonoBehaviour {
     
     public Transform player1;
     public Transform player2;
-    public static GameMaster gm;
+    public static GameManager gm;
 
     private Text[] text;
     private Text player1lives;
@@ -23,7 +23,7 @@ public class PlayerStatus : MonoBehaviour {
         
         if (gm == null)
         {
-            gm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
+            gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         }
         text = gameObject.GetComponentsInChildren<Text>();
         image = gameObject.GetComponentsInChildren<Image>();
@@ -33,12 +33,15 @@ public class PlayerStatus : MonoBehaviour {
         player2weapon = text[5];
         weapon1 = image[2];
         weapon2 = image[3];
-        player1 = GameManager.gm.Frost;
-        player2 = GameManager.gm.Thornton;
+
+
     }
+
 
     // Update is called once per frame
     void Update () {
+        player1 = GameManager.gm.Frost;
+        player2 = GameManager.gm.Thornton;
         player1lives.text = player1.GetComponent<Player>().lives.ToString();
         player2lives.text = player2.GetComponent<Player>().lives.ToString();
         if (player1 != null && player1.GetComponent<Player>().getWeapon() != null)

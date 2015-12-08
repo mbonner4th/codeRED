@@ -68,7 +68,7 @@ Transform:
   m_GameObject: {fileID: 126530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.66056538, y: .204957649, z: 0}
-  m_LocalScale: {x: .222416639, y: .256384343, z: 1}
+  m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children:
   - {fileID: 496332}
   - {fileID: 413568}
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 0
-  damage: 10
+  damage: 100
   whatToHit:
     serializedVersion: 2
     m_Bits: 0
@@ -156,6 +156,18 @@ Prefab:
       propertyPath: BulletTrailPrefab
       value: 
       objectReference: {fileID: 404736, guid: 99af52378a6a4e74b854287afd999ce1, type: 2}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.x
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.y
+      value: .5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 126530}

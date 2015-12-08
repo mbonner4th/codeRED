@@ -24,15 +24,20 @@ public class Damager : MonoBehaviour {
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.gameObject.tag);
+
         if (other.gameObject.tag == "Player")
         {
+           
             if (hasOwner && other.GetComponent<Player>().playerNum != owner)
             {
+                Debug.Log("destroy");
                 other.GetComponent<Player>().damagePlayer((int)damage);
                 Destroy(this.gameObject);
 
+
             } else if (hasOwner == false) {
+                Debug.Log("destroy");
+
                 other.GetComponent<Player>().damagePlayer((int)damage);
                 Destroy(this.gameObject);
             }
