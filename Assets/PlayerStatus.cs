@@ -8,7 +8,7 @@ public class PlayerStatus : MonoBehaviour {
     
     public Transform player1;
     public Transform player2;
-    public static GameMaster gm;
+    public static GameManager gm;
 
     private Text[] text;
     private Text player1lives;
@@ -23,7 +23,7 @@ public class PlayerStatus : MonoBehaviour {
         
         if (gm == null)
         {
-            gm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
+            gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         }
         text = gameObject.GetComponentsInChildren<Text>();
         image = gameObject.GetComponentsInChildren<Image>();

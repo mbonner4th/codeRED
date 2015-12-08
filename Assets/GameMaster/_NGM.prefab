@@ -268,10 +268,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugMode: 0
-  playerPrefab: {fileID: 0}
-  player2Prefab: {fileID: 0}
-  spawnPoints: []
-  Jail: {fileID: 459452}
+  FrostPrefab: {fileID: 0}
+  Frost: {fileID: 0}
+  ThorntonPrefab: {fileID: 0}
+  Thornton: {fileID: 0}
+  Jail: {fileID: 0}
   respawnDelay: 1
 --- !u!212 &21204012
 SpriteRenderer:

@@ -24,6 +24,6 @@ public class MellowYellow : Weapon {
     public override void Effect()
     {
         Destroy(this.gameObject);
-        GameMaster.killPlayer(transform.parent.parent.GetComponent<Player>());
+        GameManager.killPlayer(transform.parent.parent.GetComponent<Player>());
     }
 }
