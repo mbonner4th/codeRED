@@ -74,6 +74,7 @@ public class Sword : Weapon {
             rotate90.y = 0;
             rotate90.z = 90;
             transform.Rotate(rotate90);
+            this.transform.GetComponent<AudioSource>().Play();
         }
     }
 

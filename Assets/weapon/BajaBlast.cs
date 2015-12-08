@@ -42,6 +42,7 @@ public class BajaBlast : Weapon
         {
             return;
         }
+        this.transform.GetComponent<AudioSource>().Play();
         startTimer = true;
         throwTime = Time.time;
     }

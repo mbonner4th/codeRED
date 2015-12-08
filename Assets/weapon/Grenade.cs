@@ -52,6 +52,7 @@ public class Grenade : Weapon {
         uses++;
         startTimer = true;
         throwTime = Time.time;
+        this.transform.GetComponent<AudioSource>().Play();
     }
 
     public override void Effect()

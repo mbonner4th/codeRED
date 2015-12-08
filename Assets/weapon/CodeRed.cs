@@ -16,6 +16,7 @@ public class CodeRed : Weapon {
         {
             return;
         }
+        this.transform.GetComponent<AudioSource>().Play();
         Effect();
     }
 

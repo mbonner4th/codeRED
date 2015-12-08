@@ -54,6 +54,7 @@ public class Dagger : Weapon {
         Transform t = (Transform)Instantiate(BulletTrailPrefab, firePoint.position, firePoint.rotation);
         t.GetComponent<Damager>().setOwner(transform.parent.parent.GetComponent<Player>().playerNum);
         t.GetComponent<Damager>().setDamage(damage);
+        this.transform.GetComponent<AudioSource>().Play();
 
     }
 }
