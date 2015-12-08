@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour {
          int randomNumbSpawn = Mathf.FloorToInt(Random.Range(0.1f, spawnPointRange));
          Debug.Log("respawning at: " + randomNumbSpawn);
          player.transform.position = spawnPoints[randomNumbSpawn].transform.position;
+         player.turnInvincible(2);
          //Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
      }
 
