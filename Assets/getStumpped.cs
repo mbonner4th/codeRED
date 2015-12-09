@@ -22,6 +22,7 @@ public class getStumpped : Weapon{
         {
             if (p.playerNum != this.transform.parent.parent.GetComponent<Player>().playerNum)
             {
+                Debug.Log("why " + p.playerNum + " " + this.transform.parent.parent.GetComponent<Player>().playerNum);
                 GameManager.killPlayer(p);
             }
         }

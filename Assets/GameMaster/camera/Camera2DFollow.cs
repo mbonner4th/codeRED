@@ -13,6 +13,9 @@ namespace UnityStandardAssets._2D
         public float lookAheadMoveThreshold = 0.1f;
 		public float yRestriction = -16;
         public float minY = 10;
+        private float doubleMiny;
+        private float originalMinY;
+       // public float minX = 0;
         public float heightCeling = 30.0f;
         public float widthCeiling = 30.0f;
         private float m_OffsetZ;
@@ -31,13 +34,15 @@ namespace UnityStandardAssets._2D
             m_LastTargetPosition = midpoint;
             m_OffsetZ = (transform.position - midpoint).z + 3;
             transform.parent = null;
+            originalMinY = minY;
+            doubleMiny = minY * 2;
 
         }
 
         // Update is called once per frame
         public void Update()
         {
-
+            
             // only update lookahead pos if accelerating or changed direction
 
                 float xMoveDelta = (findMidpoint() - m_LastTargetPosition).x;
@@ -126,19 +131,29 @@ namespace UnityStandardAssets._2D
             float width = Mathf.Abs(iminX() - maxX());
             float height = Mathf.Abs(iminY() - maxY());
             float minX = minY * Screen.width / Screen.height;
+
             float camX = Mathf.Max(width, minX);
 
-            //Debug.Log("sreen width= " + width);
+            
 
             if (height > heightCeling)
             {
                 height = heightCeling;
+                minY = doubleMiny;
+               // Debug.Log("doubled");
             }
             if (camX > widthCeiling)
             {
                 camX = widthCeiling;
+                minY = doubleMiny;
             }
-            Debug.Log("screen height= " + height + " screen widtth = " + (camX * Screen.height / Screen.width));
+            if ((camX * Screen.height / Screen.width) < widthCeiling && height < heightCeling)
+            {
+                minY = originalMinY;
+             //   Debug.Log("small");
+            }
+
+           // Debug.Log("screen height= " + height + " screen widtth = " + (camX * Screen.height / Screen.width));
             transform.GetComponent<Camera>().orthographicSize = Mathf.Max(height, camX * Screen.height / Screen.width, minY);
         }
 

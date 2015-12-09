@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour {
          //    r.enabled = true;
          //}
          int randomNumbSpawn = Mathf.FloorToInt(Random.Range(0.1f, spawnPointRange));
-         Debug.Log("respawning at: " + randomNumbSpawn);
+         //Debug.Log("respawning at: " + randomNumbSpawn);
          player.transform.position = spawnPoints[randomNumbSpawn].transform.position;
          player.turnInvincible(2);
         player.IsDead = false;
@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour {
      {
 
         --player.lives;
-        Debug.Log("Player is dead!");
+        //Debug.Log("Player is dead!");
         if (CharacterSelectionMenu.AION) {
             if(player.playerNum == 2)
             {
