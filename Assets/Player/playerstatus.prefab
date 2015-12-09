@@ -10,7 +10,7 @@ GameObject:
   - 224: {fileID: 22486706}
   - 222: {fileID: 22252104}
   - 114: {fileID: 11444900}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: weapon1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - 224: {fileID: 22489084}
   - 222: {fileID: 22289646}
   - 114: {fileID: 11437932}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: heart2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - 224: {fileID: 22489074}
   - 222: {fileID: 22212346}
   - 114: {fileID: 11487900}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: heart1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - 224: {fileID: 22477666}
   - 222: {fileID: 22267018}
   - 114: {fileID: 11485998}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: player2Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   - 224: {fileID: 22462792}
   - 222: {fileID: 22230236}
   - 114: {fileID: 11416200}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: player1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - 224: {fileID: 22408248}
   - 222: {fileID: 22234466}
   - 114: {fileID: 11470862}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: player1Lives
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - 224: {fileID: 22414378}
   - 222: {fileID: 22204324}
   - 114: {fileID: 11487636}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: player2Lives
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - 224: {fileID: 22489302}
   - 222: {fileID: 22219852}
   - 114: {fileID: 11484662}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: player2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   - 224: {fileID: 22460646}
   - 222: {fileID: 22222860}
   - 114: {fileID: 11488962}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: player1Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - 114: {fileID: 11466176}
   - 114: {fileID: 11474206}
   - 114: {fileID: 11456574}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: playerstatus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   - 224: {fileID: 22406350}
   - 222: {fileID: 22222446}
   - 114: {fileID: 11421406}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: weapon2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: .00899999961}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -313,14 +313,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92bf5a0654000134ea9bef0d4ae6eda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: []
-  player1lives: {fileID: 0}
-  player2lives: {fileID: 0}
-  player1weapon: {fileID: 0}
-  player2weapon: {fileID: 0}
-  image: []
-  weapon1: {fileID: 0}
-  weapon2: {fileID: 0}
   player1: {fileID: 0}
   player2: {fileID: 0}
 --- !u!114 &11466176
@@ -622,7 +614,7 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
-  m_SortingLayerID: -1125059069
+  m_SortingLayerID: -580986039
   m_SortingOrder: 0
 --- !u!224 &22406350
 RectTransform:
@@ -827,7 +819,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SortingLayerID
+      value: -580986039
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 175544}

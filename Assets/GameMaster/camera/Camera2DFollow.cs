@@ -13,7 +13,8 @@ namespace UnityStandardAssets._2D
         public float lookAheadMoveThreshold = 0.1f;
 		public float yRestriction = -16;
         public float minY = 10;
-
+        public float heightCeling = 30.0f;
+        public float widthCeiling = 30.0f;
         private float m_OffsetZ;
         private Vector3 m_LastTargetPosition;
         private Vector3 midpoint;
@@ -115,12 +116,25 @@ namespace UnityStandardAssets._2D
 
         public void SetCameraZoom()
         {
-            float minX = minY * Screen.width / Screen.height;
+            //float minX = minY * Screen.width / Screen.height;
+
 
             float width = Mathf.Abs(iminX() - maxX());
             float height = Mathf.Abs(iminY() - maxY());
+            float minX = minY * Screen.width / Screen.height;
             float camX = Mathf.Max(width, minX);
 
+            //Debug.Log("sreen width= " + width);
+
+            if (height > heightCeling)
+            {
+                height = heightCeling;
+            }
+            if (camX > widthCeiling)
+            {
+                camX = widthCeiling;
+            }
+            Debug.Log("screen height= " + height + " screen widtth = " + (camX * Screen.height / Screen.width));
             transform.GetComponent<Camera>().orthographicSize = Mathf.Max(height, camX * Screen.height / Screen.width, minY);
         }
 
