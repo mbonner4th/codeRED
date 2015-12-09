@@ -574,7 +574,7 @@ public class Player : MonoBehaviour {
  
         if(other.gameObject.tag == "Spikes")
         {
-            Debug.Log("spikes");
+            //Debug.Log("spikes");
             damagePlayer(1000);
         }
         if (other.gameObject.tag == "teleporter") {
