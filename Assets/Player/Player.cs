@@ -7,7 +7,11 @@ public class Player : MonoBehaviour {
 	public class PlayerStats{
 		public int Health = 1;
 	}
-
+    private bool isDead = false;
+    public bool IsDead {
+        get { return isDead; }
+        set { isDead = value; }
+    }
 	public PlayerStats playerStats = new PlayerStats();
 	public int fallBoundary = -20;
     public int playerNum;

@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 986643b5753493f47bb7d63e604bb324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialX: 5
+  initialX: 15
   initialY: 10
 --- !u!212 &21253216
 SpriteRenderer:
@@ -121,7 +121,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: initialX
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: initialY

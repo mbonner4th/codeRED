@@ -6,6 +6,7 @@ public class GrapplingHook : Weapon {
     private Transform bullet = null;
     private bool shooting = false;
     private float theX;
+    private bool pickedUp = false;
 
     public override void Awake()
     {
@@ -15,6 +16,18 @@ public class GrapplingHook : Weapon {
     // Update is called once per frame
     void Update()
     {
+        if (!pickedUp)
+        {
+            if (transform.parent != null)
+            {
+                pickedUp = true;
+                Vector3 rotateAround;
+                rotateAround.x = 0;
+                rotateAround.y = 180;
+                rotateAround.z = 0;
+                transform.Rotate(rotateAround);
+            }
+        }
         if (bullet == null)
         {
             shooting = false;
