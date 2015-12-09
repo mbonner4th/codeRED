@@ -238,6 +238,8 @@ MonoBehaviour:
   lookAheadMoveThreshold: .100000001
   yRestriction: -16
   minY: 10
+  heightCeling: 30
+  widthCeiling: 30
 --- !u!82 &151708595
 AudioSource:
   m_ObjectHideFlags: 0
