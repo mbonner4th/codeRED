@@ -217,7 +217,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 34
 --- !u!114 &151708594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,6 +513,92 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3586c9efded39bd4abfab079cef8d45b, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &863348180
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 22464584, guid: 21cf6ba387003134d9224492059cbf3d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22464584, guid: 21cf6ba387003134d9224492059cbf3d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22464584, guid: 21cf6ba387003134d9224492059cbf3d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22464584, guid: 21cf6ba387003134d9224492059cbf3d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22464584, guid: 21cf6ba387003134d9224492059cbf3d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22464584, guid: 21cf6ba387003134d9224492059cbf3d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22464584, guid: 21cf6ba387003134d9224492059cbf3d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22464584, guid: 21cf6ba387003134d9224492059cbf3d, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22464584, guid: 21cf6ba387003134d9224492059cbf3d, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22464584, guid: 21cf6ba387003134d9224492059cbf3d, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22464584, guid: 21cf6ba387003134d9224492059cbf3d, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22464584, guid: 21cf6ba387003134d9224492059cbf3d, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22464584, guid: 21cf6ba387003134d9224492059cbf3d, type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22464584, guid: 21cf6ba387003134d9224492059cbf3d, type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22464584, guid: 21cf6ba387003134d9224492059cbf3d, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22464584, guid: 21cf6ba387003134d9224492059cbf3d, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22464584, guid: 21cf6ba387003134d9224492059cbf3d, type: 2}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22464584, guid: 21cf6ba387003134d9224492059cbf3d, type: 2}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 21cf6ba387003134d9224492059cbf3d, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &863348181 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 190134, guid: 21cf6ba387003134d9224492059cbf3d, type: 2}
+  m_PrefabInternal: {fileID: 863348180}
 --- !u!1001 &883476719
 Prefab:
   m_ObjectHideFlags: 0
@@ -594,6 +680,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 27
       objectReference: {fileID: 0}
+    - target: {fileID: 11411318, guid: cc34e82c29ec7654994bfff2bfbc0062, type: 2}
+      propertyPath: winnerScreen
+      value: 
+      objectReference: {fileID: 863348181}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc34e82c29ec7654994bfff2bfbc0062, type: 2}
   m_IsPrefabParent: 0
@@ -1606,7 +1696,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1938330962}
   - 212: {fileID: 1938330961}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: falls_jungle_wood_force_elements_42494_3840x2160
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1635,7 +1725,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1438898623
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 03ffccff20e3718448dafe50c5b67d97, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1650,7 +1740,7 @@ Transform:
   m_LocalScale: {x: 5.14899874, y: 9.21670628, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 33
 --- !u!1001 &2036292757
 Prefab:
   m_ObjectHideFlags: 0
