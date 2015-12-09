@@ -186,7 +186,7 @@ MonoBehaviour:
   whatToHit:
     serializedVersion: 2
     m_Bits: 256
-  BulletTrailPrefab: {fileID: 425830, guid: 0cf248625574eab4fbb521e25b08cd42, type: 2}
+  BulletTrailPrefab: {fileID: 425830, guid: ca805b677b0e13346a1ccf7dece84530, type: 2}
   effectSpawnRate: 10
   charges: 5
   muzzleFlashPrefab: {fileID: 0}
@@ -208,7 +208,9 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -234,7 +236,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: BulletTrailPrefab
       value: 
-      objectReference: {fileID: 425830, guid: 0cf248625574eab4fbb521e25b08cd42, type: 2}
+      objectReference: {fileID: 425830, guid: ca805b677b0e13346a1ccf7dece84530, type: 2}
     - target: {fileID: 0}
       propertyPath: whatToHit.m_Bits
       value: 256
