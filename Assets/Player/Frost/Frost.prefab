@@ -278,7 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStats:
     Health: 100
-  fallBoundary: -20
+  fallBoundary: -5
   playerNum: 1
   lives: 5
   invinicbleDuration: 2
@@ -404,6 +404,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_SortingLayerID
       value: 1502188323
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: fallBoundary
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

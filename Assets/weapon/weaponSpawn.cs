@@ -13,7 +13,7 @@ public class weaponSpawn : MonoBehaviour {
     }
 
     void picked() {
-        if (pickedUp == false && myWeapon.parent != null) {
+        if (myWeapon != null && pickedUp == false && myWeapon.parent != null) {
             pickedUp = true;  //reset timer if a weapon is picked up
         }
     }

@@ -263,7 +263,7 @@ MonoBehaviour:
   m_AirControl: 0
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 1792
+    m_Bits: 1536
 --- !u!114 &11486906
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -277,7 +277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStats:
     Health: 100
-  fallBoundary: -20
+  fallBoundary: -5
   playerNum: 2
   lives: 5
   invinicbleDuration: 2
@@ -344,7 +344,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_WhatIsGround.m_Bits
-      value: 1792
+      value: 1536
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: AION
@@ -357,6 +357,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_SortingLayerID
       value: 1502188323
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: fallBoundary
+      value: -5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

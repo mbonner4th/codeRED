@@ -11,6 +11,7 @@ public class WeaponManager : MonoBehaviour {
     public Transform[] commonConsumable; //common consumable
     public Transform[] uncommonConsumable; //uncommon consumable
     public Transform[] rareConsumable; //rare consumable
+    public Transform TRUMP; //trump
 
     public float commonProbability;
     public float uncommonProbability;
@@ -36,6 +37,7 @@ public class WeaponManager : MonoBehaviour {
         }
         else
         {
+            //spawnWeapon(w);
             spawnConsumable(w);
         }
     }
@@ -44,6 +46,7 @@ public class WeaponManager : MonoBehaviour {
     {
         Transform wTransform = w.transform;
         float r = Random.Range(0f, 1f);
+       // r = 10.0f;
         if (r < commonProbability)
         {
             int s = Random.Range(0, commonWeapon.Length);
@@ -60,7 +63,8 @@ public class WeaponManager : MonoBehaviour {
             w.setMyWeapon((Transform)Instantiate((Transform)rareWeapon[s], wTransform.position, wTransform.rotation)); // creating first weapon
         } else
         {
-            spawnWeapon(w);
+            w.setMyWeapon((Transform)Instantiate((Transform)TRUMP, wTransform.position, wTransform.rotation));
+            //spawnWeapon(w);
         }
     }
 
