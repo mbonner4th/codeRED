@@ -37,7 +37,6 @@ namespace UnityStandardAssets._2D
         // Update is called once per frame
         public void Update()
         {
-
             if (target1 == null || target2 == null) {
 				findPlayer();
 				return;
