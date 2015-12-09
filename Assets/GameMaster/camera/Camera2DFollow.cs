@@ -111,6 +111,10 @@ namespace UnityStandardAssets._2D
                 sum += r.transform.position;
                 count++;
             }
+            if (count == 0f)
+            {
+                return sum;
+            }
             return (sum) / count;
         }
 
