@@ -6,7 +6,7 @@ public class BajaBlast : Weapon
 
     private float throwTime;
     private bool startTimer = false;
-    public float explodeTime = 2.5f;
+    public float explodeTime = 0.5f;
     private bool isInit = false;
     private UnityStandardAssets._2D.PlatformerCharacter2D myPlayer;
 
