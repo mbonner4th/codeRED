@@ -34,8 +34,9 @@ public class Hook : MonoBehaviour {
 
     public void setRight(Quaternion right)
     {
-        if(right.y < 1)
+        if(right.y > -1)
         {
+            Debug.Log(right.y);
             isRight = true;
         }
     }

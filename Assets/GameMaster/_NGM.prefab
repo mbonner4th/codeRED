@@ -28,7 +28,7 @@ GameObject:
   m_Layer: 0
   m_Name: Jail
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -120,8 +120,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158236}
-  m_LocalRotation: {x: 0, y: 0, z: .701377869, w: .712789714}
-  m_LocalPosition: {x: -6.94000006, y: 2.34999967, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106709}
+  m_LocalPosition: {x: 3.16000009, y: -1.40999997, z: 0}
   m_LocalScale: {x: 2, y: .299999982, z: 1}
   m_Children: []
   m_Father: {fileID: 418004}
@@ -132,8 +132,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109046}
-  m_LocalRotation: {x: 0, y: 0, z: .701377869, w: .712789714}
-  m_LocalPosition: {x: -11.7200003, y: 2.43000007, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106709}
+  m_LocalPosition: {x: -2.22000003, y: -1.99000001, z: 0}
   m_LocalScale: {x: 2, y: .300000012, z: 1}
   m_Children: []
   m_Father: {fileID: 418004}
@@ -145,7 +145,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120444}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.7999992, y: 5.07000017, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 413464}
@@ -161,7 +161,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 143906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.8499999, y: 10.2299995, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 464230}
@@ -173,7 +173,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.266119, y: 47.1051102, z: 0}
+  m_LocalPosition: {x: 10.3049774, y: 11.8999996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 459452}
@@ -187,7 +187,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 168218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.3825512, y: 2.34702325, z: 0}
+  m_LocalPosition: {x: -2.50999999, y: -2.19000006, z: 0}
   m_LocalScale: {x: 2, y: .300000012, z: 1}
   m_Children: []
   m_Father: {fileID: 418004}
@@ -198,8 +198,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 168304}
-  m_LocalRotation: {x: 0, y: 0, z: .0155208111, w: .999879599}
-  m_LocalPosition: {x: -12.1999998, y: 7.4000001, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.4000001, y: 3.70000005, z: 0}
   m_LocalScale: {x: 2, y: .300000042, z: 1}
   m_Children: []
   m_Father: {fileID: 418004}
@@ -272,7 +272,7 @@ MonoBehaviour:
   Frost: {fileID: 0}
   ThorntonPrefab: {fileID: 403148, guid: eb3a15f12d5669b40a7fd40ab02ec560, type: 2}
   Thornton: {fileID: 0}
-  Jail: {fileID: 0}
+  Jail: {fileID: 418004}
   respawnDelay: 1
 --- !u!212 &21204012
 SpriteRenderer:

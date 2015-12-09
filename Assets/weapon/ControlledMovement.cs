@@ -14,6 +14,10 @@ public class ControlledMovement : MonoBehaviour {
     Quaternion rightAngle;
     private bool takingInput = true;
     private Transform theParent;
+    public float maxX = 25;
+    public float minX = -25;
+    public float maxY = 30;
+    public float minY = -10;
 
     void Awake() {
         upAngle.w = 0.7f; upAngle.x = 0; upAngle.y = 0; upAngle.z = 0.7f;
@@ -51,6 +55,16 @@ public class ControlledMovement : MonoBehaviour {
         if (theParent == null)
         {
             takingInput = false;
+        }
+
+        if (transform.position.x > maxX || transform.position.x < minX)
+        {
+            Destroy(this.gameObject);
+        }
+
+        if (transform.position.y > maxY || transform.position.y < minY)
+        {
+            Destroy(this.gameObject);
         }
     }
 

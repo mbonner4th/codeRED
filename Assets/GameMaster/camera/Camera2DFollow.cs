@@ -27,7 +27,7 @@ namespace UnityStandardAssets._2D
         {
             target1 = GameManager.gm.Frost;
             target2 = GameManager.gm.Thornton;
-            midpoint = findMidpoint(target1.position, target2.position);
+            midpoint = findMidpoint();
             m_LastTargetPosition = midpoint;
             m_OffsetZ = (transform.position - midpoint).z + 3;
             transform.parent = null;
@@ -45,7 +45,7 @@ namespace UnityStandardAssets._2D
             // only update lookahead pos if accelerating or changed direction
             if (target1 && target2)
             {
-                float xMoveDelta = (findMidpoint(target1.position, target2.position) - m_LastTargetPosition).x;
+                float xMoveDelta = (findMidpoint() - m_LastTargetPosition).x;
 
                 bool updateLookAheadTarget = Mathf.Abs(xMoveDelta) > lookAheadMoveThreshold;
 
@@ -58,7 +58,7 @@ namespace UnityStandardAssets._2D
                     m_LookAheadPos = Vector3.MoveTowards(m_LookAheadPos, Vector3.zero, Time.deltaTime * lookAheadReturnSpeed);
                 }
 
-                Vector3 aheadTargetPos = findMidpoint(target1.position, target2.position) + m_LookAheadPos + Vector3.forward * m_OffsetZ;
+                Vector3 aheadTargetPos = findMidpoint() + m_LookAheadPos + Vector3.forward * m_OffsetZ;
                 Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref m_CurrentVelocity, damping);
 
                 newPos = new Vector3(newPos.x, Mathf.Clamp(newPos.y, yRestriction, Mathf.Infinity), newPos.z);
@@ -67,7 +67,7 @@ namespace UnityStandardAssets._2D
 
                 SetCameraZoom();
 
-                m_LastTargetPosition = findMidpoint(target1.position,target2.position);
+                m_LastTargetPosition = findMidpoint();
             }
         }
 
@@ -94,21 +94,200 @@ namespace UnityStandardAssets._2D
 
 		
 
-        Vector3 findMidpoint(Vector3 target1, Vector3 target2)
+        Vector3 findMidpoint()
         {
-            return (target1 + target2) * 0.5f;
+            Player[] players = FindObjectsOfType<Player>();
+            ControlledMovement[] rockets = FindObjectsOfType<ControlledMovement>();
+            Vector3 sum;
+            sum.x = 0;
+            sum.y = 0;
+            sum.z = 0;
+            float count = 0f;
+            foreach(Player p in players)
+            {
+                if (!p.IsDead) {
+                    sum += p.transform.position;
+                    count++;
+                }
+                
+            }
+            foreach (ControlledMovement r in rockets)
+            {
+                sum += r.transform.position;
+                count++;
+            }
+            return (sum) / count;
         }
 
         public void SetCameraZoom()
         {
             float minX = minY * Screen.width / Screen.height;
 
-            float width = Mathf.Abs(target1.position.x - target2.position.x);
-            float height = Mathf.Abs(target1.position.y - target2.position.y);
+            float width = Mathf.Abs(iminX() - maxX());
+            float height = Mathf.Abs(iminY() - maxY());
             float camX = Mathf.Max(width, minX);
 
             transform.GetComponent<Camera>().orthographicSize = Mathf.Max(height, camX * Screen.height / Screen.width, minY);
         }
 
+        public float iminX()
+        {
+            bool initted = false;
+            float tminX = 1;
+            Player[] players = FindObjectsOfType<Player>();
+            ControlledMovement[] rockets = FindObjectsOfType<ControlledMovement>();
+            foreach (Player p in players)
+            {
+                if (!initted) {
+                    initted = true;
+                    tminX = p.transform.position.x;
+                } else
+                {
+                    if (tminX > p.transform.position.x)
+                    {
+                        tminX = p.transform.position.x;
+                    }
+                }
+            }
+            foreach (ControlledMovement r in rockets)
+            {
+                if (!initted)
+                {
+                    initted = true;
+                    tminX = r.transform.position.x;
+                }
+                else
+                {
+                    if (tminX > r.transform.position.x)
+                    {
+                        tminX = r.transform.position.x;
+                    }
+                }
+            }
+            return tminX;
+        }
+
+        public float maxX()
+        {
+            bool initted = false;
+            float tminX = 1;
+            Player[] players = FindObjectsOfType<Player>();
+            ControlledMovement[] rockets = FindObjectsOfType<ControlledMovement>();
+            foreach (Player p in players)
+            {
+                if (!initted)
+                {
+                    initted = true;
+                    tminX = p.transform.position.x;
+                }
+                else
+                {
+                    if (tminX < p.transform.position.x)
+                    {
+                        tminX = p.transform.position.x;
+                    }
+                }
+            }
+            foreach (ControlledMovement r in rockets)
+            {
+                if (!initted)
+                {
+                    initted = true;
+                    tminX = r.transform.position.x;
+                }
+                else
+                {
+                    if (tminX < r.transform.position.x)
+                    {
+                        tminX = r.transform.position.x;
+                    }
+                }
+            }
+            return tminX;
+        }
+
+        public float iminY()
+        {
+            bool initted = false;
+            float tminX = -10;
+            Player[] players = FindObjectsOfType<Player>();
+            ControlledMovement[] rockets = FindObjectsOfType<ControlledMovement>();
+            foreach (Player p in players)
+            {
+                if (p.IsDead) { continue; }
+
+                if (!initted)
+                {
+                    initted = true;
+                    tminX = p.transform.position.x;
+                }
+                else
+                {
+                    if (tminX > p.transform.position.x)
+                    {
+                        tminX = p.transform.position.x;
+                    }
+                }
+            }
+            foreach (ControlledMovement r in rockets)
+            {
+                if (!initted)
+                {
+                    initted = true;
+                    tminX = r.transform.position.x;
+                }
+                else
+                {
+                    if (tminX > r.transform.position.x)
+                    {
+                        tminX = r.transform.position.x;
+                    }
+                }
+            }
+            return tminX;
+        }
+
+        public float maxY()
+        {
+            bool initted = false;
+            float tminX = 10;
+            Player[] players = FindObjectsOfType<Player>();
+            ControlledMovement[] rockets = FindObjectsOfType<ControlledMovement>();
+            foreach (Player p in players)
+            {
+                if (p.IsDead)
+                {
+                    continue;
+                }
+                if (!initted)
+                {
+                    initted = true;
+                    tminX = p.transform.position.x;
+                }
+                else
+                {
+                    if (tminX < p.transform.position.x)
+                    {
+                        tminX = p.transform.position.x;
+                    }
+                }
+            }
+            foreach (ControlledMovement r in rockets)
+            {
+                if (!initted)
+                {
+                    initted = true;
+                    tminX = r.transform.position.x;
+                }
+                else
+                {
+                    if (tminX < r.transform.position.x)
+                    {
+                        tminX = r.transform.position.x;
+                    }
+                }
+            }
+            return tminX;
+        }
     }
 }

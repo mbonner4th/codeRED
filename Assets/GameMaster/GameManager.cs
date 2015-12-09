@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour {
          Debug.Log("respawning at: " + randomNumbSpawn);
          player.transform.position = spawnPoints[randomNumbSpawn].transform.position;
          player.turnInvincible(2);
+        player.IsDead = false;
          //Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
      }
 
@@ -71,12 +72,13 @@ public class GameManager : MonoBehaviour {
          {
              Destroy(player.transform.FindChild("arm").GetChild(1).gameObject);
          }
-         //player.transform.position = gm.gameObject.transform.GetChild(0).position;
-         //Renderer[] rs = player.GetComponentsInChildren<Renderer>();
-         //foreach(Renderer r in rs){
-           // r.enabled = false;
-         //}
-         //player.turnInvincible(gm.respawnDelay);
+        //player.transform.position = gm.gameObject.transform.GetChild(0).position;
+        //Renderer[] rs = player.GetComponentsInChildren<Renderer>();
+        //foreach(Renderer r in rs){
+        // r.enabled = false;
+        //}
+        //player.turnInvincible(gm.respawnDelay);
+        player.IsDead = true;
          if (player.lives >= 0)
          {
              gm.StartCoroutine(gm.respawnPlayer(player));
