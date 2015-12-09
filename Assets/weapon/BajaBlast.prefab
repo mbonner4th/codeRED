@@ -10,8 +10,8 @@ GameObject:
   - 4: {fileID: 463884}
   - 212: {fileID: 21224106}
   - 61: {fileID: 6175530}
-  - 114: {fileID: 11473606}
   - 82: {fileID: 8233954}
+  - 114: {fileID: 11465476}
   m_Layer: 0
   m_Name: BajaBlast
   m_TagString: Untagged
@@ -114,7 +114,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &11473606
+--- !u!114 &11465476
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

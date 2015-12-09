@@ -17,12 +17,12 @@ public class MellowYellow : Weapon {
         {
             return;
         }
-        this.transform.GetComponent<AudioSource>().Play();
         Effect();
     }
 
     public override void Effect()
     {
+        Instantiate(BulletTrailPrefab).GetComponent<MellowYellowEffect>();
         Destroy(this.gameObject);
         GameManager.killPlayer(transform.parent.parent.GetComponent<Player>());
     }

@@ -11,7 +11,6 @@ GameObject:
   - 212: {fileID: 21263450}
   - 61: {fileID: 6145630}
   - 114: {fileID: 11461232}
-  - 82: {fileID: 8286138}
   m_Layer: 0
   m_Name: MellowYellow
   m_TagString: Untagged
@@ -44,76 +43,6 @@ BoxCollider2D:
   m_Offset: {x: -1.1920929e-07, y: -1.1920929e-07}
   serializedVersion: 2
   m_Size: {x: .277777761, y: .222222224}
---- !u!82 &8286138
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 130252}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 81ec5fecb8794964fb328bd5ef42bb47, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &11461232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -130,7 +59,7 @@ MonoBehaviour:
   whatToHit:
     serializedVersion: 2
     m_Bits: 256
-  BulletTrailPrefab: {fileID: 0}
+  BulletTrailPrefab: {fileID: 443326, guid: 81486b92597ac034e928f9ac67f100e4, type: 2}
   effectSpawnRate: 10
   charges: 1
   muzzleFlashPrefab: {fileID: 0}
@@ -187,7 +116,11 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 81ec5fecb8794964fb328bd5ef42bb47, type: 3}
+      objectReference: {fileID: 8300000, guid: cb70153ed06c26043a883d53c45554cc, type: 3}
+    - target: {fileID: 0}
+      propertyPath: BulletTrailPrefab
+      value: 
+      objectReference: {fileID: 443326, guid: 81486b92597ac034e928f9ac67f100e4, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 130252}
