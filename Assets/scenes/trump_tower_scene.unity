@@ -5095,6 +5095,86 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2024917495}
+    - target: {fileID: 120080, guid: c8aff63f8a30ca6488dc00f39ce58ddb, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 173098, guid: c8aff63f8a30ca6488dc00f39ce58ddb, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 146190, guid: c8aff63f8a30ca6488dc00f39ce58ddb, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 131868, guid: c8aff63f8a30ca6488dc00f39ce58ddb, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 181436, guid: c8aff63f8a30ca6488dc00f39ce58ddb, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 107294, guid: c8aff63f8a30ca6488dc00f39ce58ddb, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 112864, guid: c8aff63f8a30ca6488dc00f39ce58ddb, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 116444, guid: c8aff63f8a30ca6488dc00f39ce58ddb, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 156010, guid: c8aff63f8a30ca6488dc00f39ce58ddb, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 123054, guid: c8aff63f8a30ca6488dc00f39ce58ddb, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 120080, guid: c8aff63f8a30ca6488dc00f39ce58ddb, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 173098, guid: c8aff63f8a30ca6488dc00f39ce58ddb, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 146190, guid: c8aff63f8a30ca6488dc00f39ce58ddb, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 131868, guid: c8aff63f8a30ca6488dc00f39ce58ddb, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 181436, guid: c8aff63f8a30ca6488dc00f39ce58ddb, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 107294, guid: c8aff63f8a30ca6488dc00f39ce58ddb, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 112864, guid: c8aff63f8a30ca6488dc00f39ce58ddb, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 116444, guid: c8aff63f8a30ca6488dc00f39ce58ddb, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 156010, guid: c8aff63f8a30ca6488dc00f39ce58ddb, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 123054, guid: c8aff63f8a30ca6488dc00f39ce58ddb, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c8aff63f8a30ca6488dc00f39ce58ddb, type: 2}
   m_IsPrefabParent: 0
@@ -6185,7 +6265,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 62
+  m_RootOrder: 67
 --- !u!1001 &1582667382
 Prefab:
   m_ObjectHideFlags: 0
@@ -7436,7 +7516,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3ff70cebcf664134f9630b7d7407845e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d0c6d8d35665766459e906ebbd0d12ec, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
