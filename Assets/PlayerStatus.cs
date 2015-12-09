@@ -33,6 +33,7 @@ public class PlayerStatus : MonoBehaviour {
         player2weapon = text[5];
         weapon1 = image[2];
         weapon2 = image[3];
+       
 
 
     }

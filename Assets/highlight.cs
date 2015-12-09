@@ -16,13 +16,13 @@ public class highlight : MonoBehaviour {
             {
                 current -= 1;
                 moveTo = choices[current];
-                transform.position = moveTo.position;
+                transform.position = new Vector3(moveTo.position.x, moveTo.position.y, transform.position.z);
             }
             else if (Input.GetKeyDown("s") && current < choices.Length - 1)
             {
                 current += 1;
                 moveTo = choices[current];
-                transform.position = moveTo.position;
+                transform.position = new Vector3(moveTo.position.x, moveTo.position.y, transform.position.z);
             }
         }
         else {
@@ -30,13 +30,13 @@ public class highlight : MonoBehaviour {
             {
                 current -= 1;
                 moveTo = choices[current];
-                transform.position = moveTo.position;
+                transform.position = new Vector3(moveTo.position.x, moveTo.position.y, transform.position.z);
             }
             else if (Input.GetKeyDown("d") && current < choices.Length - 1)
             {
                 current += 1;
                 moveTo = choices[current];
-                transform.position = moveTo.position;
+                transform.position = new Vector3(moveTo.position.x, moveTo.position.y, transform.position.z);
             }
         }
 
