@@ -42,6 +42,11 @@ public class GameManager : MonoBehaviour {
 
         Frost = (Transform)Instantiate(FrostPrefab, spawnPoints[Mathf.FloorToInt(Random.Range(0.1f, spawnPointRange))].transform.position, FrostPrefab.rotation);
         Thornton = (Transform)Instantiate(ThorntonPrefab, spawnPoints[Mathf.FloorToInt(Random.Range(0.1f, spawnPointRange))].transform.position, ThorntonPrefab.rotation);
+        if (CharacterSelectionMenu.AION)
+        {
+            Thornton.GetComponent<Player>().lives = 0;
+            //gm.winnerScreen.GetComponentInChildren<Text>().GetComponent<winnerText>().setScore(0);
+        }
     }
     
 
@@ -66,11 +71,19 @@ public class GameManager : MonoBehaviour {
      public static void killPlayer(Player player)
      {
 
-        
-         Debug.Log("Player is dead!");
-         --player.lives;
-         
-         player.transform.position = gm.Jail.position;
+        --player.lives;
+        Debug.Log("Player is dead!");
+        if (CharacterSelectionMenu.AION) {
+            if(player.playerNum == 2)
+            {
+                player.lives += 2;
+            }
+        }
+        //gm.winnerScreen.GetComponentInChildren<Text>().GetComponent<winnerText>().setScore(player.lives);
+
+
+
+        player.transform.position = gm.Jail.position;
          if (player.transform.FindChild("arm").childCount == 2)
          {
              Destroy(player.transform.FindChild("arm").GetChild(1).gameObject);
