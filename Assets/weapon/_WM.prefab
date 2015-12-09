@@ -57,6 +57,7 @@ MonoBehaviour:
   rareConsumable:
   - {fileID: 422716, guid: 554c202d2e2a7474c8623bab2e6a0ebc, type: 2}
   - {fileID: 471274, guid: e49d8ccac489bd24ca1e74a2ee14c14f, type: 2}
+  TRUMP: {fileID: 447044, guid: 5f7bce0898309b741b68d911298218ac, type: 2}
   commonProbability: .699000001
   uncommonProbability: .200000003
   rareProbability: .100000001
@@ -67,7 +68,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: TRUMP
+      value: 
+      objectReference: {fileID: 447044, guid: 5f7bce0898309b741b68d911298218ac, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 103372}

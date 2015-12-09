@@ -12,6 +12,7 @@ TagManager:
   - Platform
   - Platform
   - GameManager
+  - GameMaster
   layers:
   - Default
   - TransparentFX
@@ -49,9 +50,6 @@ TagManager:
   - name: Background
     uniqueID: 1438898623
     locked: 1
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Platform
     uniqueID: 1031924619
     locked: 0
@@ -60,4 +58,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 3169908227
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
